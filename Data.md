@@ -27,3 +27,4 @@ The datasets are available for download from our public S3 bucket.
 
 - **AOKVQA Repo**: [AOKVQA](https://github.com/allenai/aokvqa)
 - **COCO Repo**: [COCO](https://cocodataset.org/#home)
+- For COCO, I've download the image files under my S3 bucket: [Train](https://11777-aokvqa-data.s3.amazonaws.com/coco-zip/train2017.zip) [Val](https://11777-aokvqa-data.s3.amazonaws.com/coco-zip/val2017.zip) [Test](https://11777-aokvqa-data.s3.amazonaws.com/coco-zip/test2017.zip)
