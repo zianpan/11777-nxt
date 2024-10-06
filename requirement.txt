@@ -1,0 +1,10 @@
+transformers
+requests
+accelerate>=0.26.0
+pandas
+numpy
+matplotlib
+ftfy
+regex
+tqdm
+git+https://github.com/openai/CLIP.git
