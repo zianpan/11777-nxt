@@ -1,0 +1,603 @@
+cuda:0
+Correct number: 1
+Total number: 1
+Accuracy: 1.0
+=====================================
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000004795.jpg
+/home/ubuntu/data/coco/val2017/000000004795.jpg
+What is the descriptive word for this surface?
+['barren', 'crowded', 'minimalist', 'empty']
+Question: What is the descriptive word for this surface?
+Choices: 1. barren 2. crowded 3. minimalist 4. empty
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  4
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000147415.jpg
+/home/ubuntu/data/coco/val2017/000000147415.jpg
+What item on the desk could help with a cold?
+['cough drops', 'syringe', 'pills', 'herbal tea']
+Question: What item on the desk could help with a cold?
+Choices: 1. cough drops 2. syringe 3. pills 4. herbal tea
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  4
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000407960.jpg
+/home/ubuntu/data/coco/val2017/000000407960.jpg
+What activity does the cat appear most likely to do?
+['drink', 'jump', 'eat', 'sleep']
+Question: What activity does the cat appear most likely to do?
+Choices: 1. drink 2. jump 3. eat 4. sleep
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000485237.jpg
+/home/ubuntu/data/coco/val2017/000000485237.jpg
+What are the orange vehicles for?
+['police', 'shuttle', 'passengers', 'air traffic']
+Question: What are the orange vehicles for?
+Choices: 1. police 2. shuttle 3. passengers 4. air traffic
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000055022.jpg
+/home/ubuntu/data/coco/val2017/000000055022.jpg
+What is closest to the tree trunk?
+['closed doors', 'walking person', 'sitting person', 'open doors']
+Question: What is closest to the tree trunk?
+Choices: 1. closed doors 2. walking person 3. sitting person 4. open doors
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000547816.jpg
+/home/ubuntu/data/coco/val2017/000000547816.jpg
+The visible bottles most likely contain what kind of items?
+['body wash', 'shampoo conditioner', 'lotions', 'mouthwash']
+Question: The visible bottles most likely contain what kind of items?
+Choices: 1. body wash 2. shampoo conditioner 3. lotions 4. mouthwash
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000127182.jpg
+/home/ubuntu/data/coco/val2017/000000127182.jpg
+What is likely in front of the rug?
+['refrigerator', 'pantry', 'washing machine', 'sink']
+Question: What is likely in front of the rug?
+Choices: 1. refrigerator 2. pantry 3. washing machine 4. sink
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000217285.jpg
+/home/ubuntu/data/coco/val2017/000000217285.jpg
+What is the orange container on the left near the man in the red shirt used for?
+['training', 'keeping score', 'batting', 'storage']
+Question: What is the orange container on the left near the man in the red shirt used for?
+Choices: 1. training 2. keeping score 3. batting 4. storage
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000287874.jpg
+/home/ubuntu/data/coco/val2017/000000287874.jpg
+Is the man on the left platform going to board the train?
+['yes', 'absolutely no', 'probably yes', 'probably no']
+Question: Is the man on the left platform going to board the train?
+Choices: 1. yes 2. absolutely no 3. probably yes 4. probably no
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  1
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>Question: They are likely having pizza at what kind of event?
+Choices: 1. family 2. gaming 3. academic 4. social
+ please select the correct answer by typing the number of the correct choice.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+They are likely having pizza at a social event.<|eot_id|>
+ground truth:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000027696.jpg
+/home/ubuntu/data/coco/val2017/000000027696.jpg
+Which vegetable on the pizza would be risky for someone with a certain allergy?
+['pepperoni', 'mushrooms', 'banana peppers', 'red peppers']
+Question: Which vegetable on the pizza would be risky for someone with a certain allergy?
+Choices: 1. pepperoni 2. mushrooms 3. banana peppers 4. red peppers
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000528399.jpg
+/home/ubuntu/data/coco/val2017/000000528399.jpg
+Which food has the least carbs?
+['soup', 'water', 'sandwich', 'buns']
+Question: Which food has the least carbs?
+Choices: 1. soup 2. water 3. sandwich 4. buns
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000383289.jpg
+/home/ubuntu/data/coco/val2017/000000383289.jpg
+What vehicle is closest to the security guard?
+['silver car', 'two-wheeler', 'bluecar', 'dark car']
+Question: What vehicle is closest to the security guard?
+Choices: 1. silver car 2. two-wheeler 3. bluecar 4. dark car
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000419408.jpg
+/home/ubuntu/data/coco/val2017/000000419408.jpg
+What is the skateboard balanced on?
+['post', 'air', 'chain', 'ground']
+Question: What is the skateboard balanced on?
+Choices: 1. post 2. air 3. chain 4. ground
+ please select the correct answer by typing the number of the correct choice.
+3
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000086220.jpg
+/home/ubuntu/data/coco/val2017/000000086220.jpg
+The name of the street is the same as the last name of what actress?
+['eva mendes', 'jessica biel', 'eva green', 'jessica alba']
+Question: The name of the street is the same as the last name of what actress?
+Choices: 1. eva mendes 2. jessica biel 3. eva green 4. jessica alba
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>Question: Who has the same color hair as this woman?
+Choices: 1. phoebe tonkin 2. maria sharapova 3. serena williams 4. nina dobrev
+ please select the correct answer by typing the number of the correct choice.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+The woman in the image has blonde hair. Phoebe Tonkin is also known to have blonde hair.
+
+Answer: 1. phoebe
+ground truth:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000314251.jpg
+/home/ubuntu/data/coco/val2017/000000314251.jpg
+What is prohibited near the round road sign with a red cross on a blue background?
+['parking', 'turning', 'speeding', 'waving']
+Question: What is prohibited near the round road sign with a red cross on a blue background?
+Choices: 1. parking 2. turning 3. speeding 4. waving
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  2
+Correct number: 84
+Total number: 101
+Accuracy: 0.8316831683168316
+=====================================
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000560474.jpg
+/home/ubuntu/data/coco/val2017/000000560474.jpg
+What type of event might this be?
+['art show', 'car show', 'museum opening', 'race']
+Question: What type of event might this be?
+Choices: 1. art show 2. car show 3. museum opening 4. race
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000023126.jpg
+/home/ubuntu/data/coco/val2017/000000023126.jpg
+What is the activity being performed?
+['show performance', 'training horse', 'riding horse', 'feeding horse']
+Question: What is the activity being performed?
+Choices: 1. show performance 2. training horse 3. riding horse 4. feeding horse
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000423506.jpg
+/home/ubuntu/data/coco/val2017/000000423506.jpg
+Which piece of clothing is unique to one person here?
+['collar', 'shirt', 'tie', 'vest']
+Question: Which piece of clothing is unique to one person here?
+Choices: 1. collar 2. shirt 3. tie 4. vest
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000463527.jpg
+/home/ubuntu/data/coco/val2017/000000463527.jpg
+What is in the bottles?
+['beer', 'liquer', 'water', 'juice']
+Question: What is in the bottles?
+Choices: 1. beer 2. liquer 3. water 4. juice
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000079229.jpg
+/home/ubuntu/data/coco/val2017/000000079229.jpg
+The temperature outside is likely what range?
+['below freezing', 'hot', 'cool', 'very humid']
+Question: The temperature outside is likely what range?
+Choices: 1. below freezing 2. hot 3. cool 4. very humid
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000495054.jpg
+/home/ubuntu/data/coco/val2017/000000495054.jpg
+What country headquarters this plane company?
+['canada', 'japan', 'usa', 'uk']
+Question: What country headquarters this plane company?
+Choices: 1. canada 2. japan 3. usa 4. uk
+ please select the correct answer by typing the number of the correct choice.
+3
+wrong answer:  4
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000226802.jpg
+/home/ubuntu/data/coco/val2017/000000226802.jpg
+Which vehicle is closest to the rectangular blue sign?
+['blue car', 'red bus', 'motorcycle', 'light car']
+Question: Which vehicle is closest to the rectangular blue sign?
+Choices: 1. blue car 2. red bus 3. motorcycle 4. light car
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000210030.jpg
+/home/ubuntu/data/coco/val2017/000000210030.jpg
+How many bake pans were utilized?
+['one', 'none', 'four', 'three']
+Question: How many bake pans were utilized?
+Choices: 1. one 2. none 3. four 4. three
+ please select the correct answer by typing the number of the correct choice.
+3
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000378453.jpg
+/home/ubuntu/data/coco/val2017/000000378453.jpg
+What are some of the zebras standing in in the middle of the photo?
+['grass', 'water', 'mud', 'rocks']
+Question: What are some of the zebras standing in in the middle of the photo?
+Choices: 1. grass 2. water 3. mud 4. rocks
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000185472.jpg
+/home/ubuntu/data/coco/val2017/000000185472.jpg
+Are the people boarding this train?
+['absolutely no', 'probably yes', 'probably no', 'yes']
+Question: Are the people boarding this train?
+Choices: 1. absolutely no 2. probably yes 3. probably no 4. yes
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000015517.jpg
+/home/ubuntu/data/coco/val2017/000000015517.jpg
+Where are the buses with blue trim probably assembled?
+['stadium', 'lot', 'lane', 'terminal']
+Question: Where are the buses with blue trim probably assembled?
+Choices: 1. stadium 2. lot 3. lane 4. terminal
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000082085.jpg
+/home/ubuntu/data/coco/val2017/000000082085.jpg
+What are the white rocks for?
+['breaking', 'prevent fire', 'water retainment', 'decoration']
+Question: What are the white rocks for?
+Choices: 1. breaking 2. prevent fire 3. water retainment 4. decoration
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000013923.jpg
+/home/ubuntu/data/coco/val2017/000000013923.jpg
+What animal has similar color to the flower in the picture on the left side of the room?
+['koala', 'rooster', 'zebra', 'panda']
+Question: What animal has similar color to the flower in the picture on the left side of the room?
+Choices: 1. koala 2. rooster 3. zebra 4. panda
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000420916.jpg
+/home/ubuntu/data/coco/val2017/000000420916.jpg
+Which person would be the coldest?
+['left', 'middle', 'right', 'none']
+Question: Which person would be the coldest?
+Choices: 1. left 2. middle 3. right 4. none
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000349860.jpg
+/home/ubuntu/data/coco/val2017/000000349860.jpg
+What pattern is on the bottom of the skateboard?
+['zigzag', 'plaid', 'stripes', 'polka dots']
+Question: What pattern is on the bottom of the skateboard?
+Choices: 1. zigzag 2. plaid 3. stripes 4. polka dots
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000276285.jpg
+/home/ubuntu/data/coco/val2017/000000276285.jpg
+How many drinkers are sucking down their beverages?
+['three', 'two', 'none', 'one']
+Question: How many drinkers are sucking down their beverages?
+Choices: 1. three 2. two 3. none 4. one
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  4
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000365521.jpg
+/home/ubuntu/data/coco/val2017/000000365521.jpg
+What might you mix with the alcoholic drink named?
+['milk', 'coke', 'beer', 'gin']
+Question: What might you mix with the alcoholic drink named?
+Choices: 1. milk 2. coke 3. beer 4. gin
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000236599.jpg
+/home/ubuntu/data/coco/val2017/000000236599.jpg
+What cultural clothing are the women wearing?
+['vietnamese', 'korean', 'chinese', 'japanese']
+Question: What cultural clothing are the women wearing?
+Choices: 1. vietnamese 2. korean 3. chinese 4. japanese
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  3
+Correct number: 166
+Total number: 201
+Accuracy: 0.8258706467661692
+=====================================
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000528314.jpg
+/home/ubuntu/data/coco/val2017/000000528314.jpg
+What property does the blue and green fence have?
+['soft', 'hard', 'wet', 'hot']
+Question: What property does the blue and green fence have?
+Choices: 1. soft 2. hard 3. wet 4. hot
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000393469.jpg
+/home/ubuntu/data/coco/val2017/000000393469.jpg
+Which snowboarder will have a harder time standing up?
+['both', 'neither', 'red board', 'white board']
+Question: Which snowboarder will have a harder time standing up?
+Choices: 1. both 2. neither 3. red board 4. white board
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000155341.jpg
+/home/ubuntu/data/coco/val2017/000000155341.jpg
+Which vehicle is closest to the transport hub?
+['red car', 'truck trailer', 'orange tractor', 'truck cab']
+Question: Which vehicle is closest to the transport hub?
+Choices: 1. red car 2. truck trailer 3. orange tractor 4. truck cab
+ please select the correct answer by typing the number of the correct choice.
+3
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000097994.jpg
+/home/ubuntu/data/coco/val2017/000000097994.jpg
+What meal might be eaten at the time shown on the clock?
+['supper', 'tea', 'breakfast', 'elevenses']
+Question: What meal might be eaten at the time shown on the clock?
+Choices: 1. supper 2. tea 3. breakfast 4. elevenses
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000465718.jpg
+/home/ubuntu/data/coco/val2017/000000465718.jpg
+How many different devices can show a picture?
+['three', 'one', 'four', 'two']
+Question: How many different devices can show a picture?
+Choices: 1. three 2. one 3. four 4. two
+ please select the correct answer by typing the number of the correct choice.
+3
+wrong answer:  4
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000485844.jpg
+/home/ubuntu/data/coco/val2017/000000485844.jpg
+What type of region is this likely?
+['farm', 'coastal', 'deserted', 'city']
+Question: What type of region is this likely?
+Choices: 1. farm 2. coastal 3. deserted 4. city
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000432898.jpg
+/home/ubuntu/data/coco/val2017/000000432898.jpg
+The man is looking in what direction?
+['up', 'behind', 'sideways', 'down']
+Question: The man is looking in what direction?
+Choices: 1. up 2. behind 3. sideways 4. down
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000029675.jpg
+/home/ubuntu/data/coco/val2017/000000029675.jpg
+Which flavor most closely describes the bright yellow stuff?
+['bland', 'meaty', 'sweet', 'cheesy']
+Question: Which flavor most closely describes the bright yellow stuff?
+Choices: 1. bland 2. meaty 3. sweet 4. cheesy
+ please select the correct answer by typing the number of the correct choice.
+3
+wrong answer:  4
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000232692.jpg
+/home/ubuntu/data/coco/val2017/000000232692.jpg
+What is the name of the sport the man is participating in?
+['waterboarding', 'sailboating', 'waterskiing', 'skateboarding']
+Question: What is the name of the sport the man is participating in?
+Choices: 1. waterboarding 2. sailboating 3. waterskiing 4. skateboarding
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000068833.jpg
+/home/ubuntu/data/coco/val2017/000000068833.jpg
+What is the rectangular object in the back left used to do?
+['blend food', 'watch tv', 'store bread', 'cook food']
+Question: What is the rectangular object in the back left used to do?
+Choices: 1. blend food 2. watch tv 3. store bread 4. cook food
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000067310.jpg
+/home/ubuntu/data/coco/val2017/000000067310.jpg
+Which height he jumps?
+['11 inch', '16 inch', '17inch', '10 inch']
+Question: Which height he jumps?
+Choices: 1. 11 inch 2. 16 inch 3. 17inch 4. 10 inch
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000224051.jpg
+/home/ubuntu/data/coco/val2017/000000224051.jpg
+How many vehicles have their lights on?
+['three', 'one', 'none', 'two']
+Question: How many vehicles have their lights on?
+Choices: 1. three 2. one 3. none 4. two
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  2
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>Question: What time in approximately 31 minutes?
+Choices: 1. 110 2. midnight 3. 1000 4. midday
+ please select the correct answer by typing the number of the correct choice.<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+The correct answer is 3. 1000.<|eot_id|>
+ground truth:  3
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000183437.jpg
+/home/ubuntu/data/coco/val2017/000000183437.jpg
+What color phone does the woman in the blue outfit have?
+['green', 'yellow', 'red', 'blue']
+Question: What color phone does the woman in the blue outfit have?
+Choices: 1. green 2. yellow 3. red 4. blue
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  4
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000400815.jpg
+/home/ubuntu/data/coco/val2017/000000400815.jpg
+Is the man going to the mountain in the background?
+['absolutely no', 'yes', 'absolutely yes', 'probably yes']
+Question: Is the man going to the mountain in the background?
+Choices: 1. absolutely no 2. yes 3. absolutely yes 4. probably yes
+ please select the correct answer by typing the number of the correct choice.
+1
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000292082.jpg
+/home/ubuntu/data/coco/val2017/000000292082.jpg
+Whos is sitting in the chair?
+['man', 'girl man', 'no one', 'girl']
+Question: Whos is sitting in the chair?
+Choices: 1. man 2. girl man 3. no one 4. girl
+ please select the correct answer by typing the number of the correct choice.
+2
+wrong answer:  4
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000125572.jpg
+/home/ubuntu/data/coco/val2017/000000125572.jpg
+How many buses are shown in the streets?
+['two', 'one', 'three', 'four']
+Question: How many buses are shown in the streets?
+Choices: 1. two 2. one 3. three 4. four
+ please select the correct answer by typing the number of the correct choice.
+3
+wrong answer:  2
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000523782.jpg
+/home/ubuntu/data/coco/val2017/000000523782.jpg
+What brand of soda is the can in the car?
+['sprite', 'coca cola', 'pepsi', 'mountain dew']
+Question: What brand of soda is the can in the car?
+Choices: 1. sprite 2. coca cola 3. pepsi 4. mountain dew
+ please select the correct answer by typing the number of the correct choice.
+3
+wrong answer:  1
+wrong!
+/home/ubuntu/data/coco/val2017/
+000000226154.jpg
+/home/ubuntu/data/coco/val2017/000000226154.jpg
+What material is the squared off building in the background made from?
+['steel', 'glass', 'wood', 'clay']
+Question: What material is the squared off building in the background made from?
+Choices: 1. steel 2. glass 3. wood 4. clay
+ please select the correct answer by typing the number of the correct choice.
+4
+wrong answer:  3
+Final Correct number: 246
+Total number: 300
+Final Accuracy: 0.82
