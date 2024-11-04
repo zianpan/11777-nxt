@@ -22,7 +22,7 @@ class Llama32:
         )
         self.processor = AutoProcessor.from_pretrained(model_id)
     
-    def predict_one(self,img_path,prompt, max_new_tokens = 30):
+    def predict_one(self,img_path,prompt, extra_config):
         image = Image.open(img_path)
         messages = [
             {"role": "user", "content": [
@@ -38,11 +38,17 @@ class Llama32:
             add_special_tokens=False,
             return_tensors="pt"
         ).to(self.model.device)
-        output = self.model.generate(**inputs, max_new_tokens=max_new_tokens)
+        for k, v in extra_config.items():
+            inputs[k] = v
         
-        ans = self.processor.decode(output[0])
-
-        return ans
+            # output = self.model.generate(**inputs)
+    
+            # output = self.model.generate(**inputs)
+        # self.model.eval()
+        raw_output = self.model.generate(**inputs)
+        
+        del inputs, input_text, image,messages
+        return raw_output
 
 
 if __name__ == "__main__":

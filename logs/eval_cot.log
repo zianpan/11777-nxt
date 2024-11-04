@@ -10542,3 +10542,221 @@ Choices: A. cleats B. stirrups C. shoes D. horse shoes
 Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
 
 {The man is riding a horse. The man is wearing a uniform and sitting on top of the horse. The man's feet are in stirrups. The stirrups are attached to the saddle. The man is holding onto the reins. The man is holding the reins in his hands. The man's feet are in the stirrups. The man's feet are not in cleats or shoes. The man's feet are not in horse shoes. The man's feet are in stirrups. The man is riding a horse. The man is wearing a uniform. The man is sitting on top of the horse. The man's feet are in stirrups. The man is holding onto the reins. The man is holding the reins in his hands. The man's feet are in the stirrups. The man's feet are not in cleats or shoes. The man's feet are not in horse shoes. The man's feet are in stirrups. The man is riding a horse. The man is wearing a uniform. The man is sitting on top of the horse. The man's feet are in stirrups. The man is holding onto the reins. The man is holding the reins in his hands. The man's feet are in the stirrups. The man's feet are not in cleats or shoes. The man's feet are not in horse shoes. The man's feet are in stirrups. The man is riding a horse.##############################################################################################################
+                Image: 000000004795.jpg
+                Question: What is the descriptive word for this surface?
+                Choices: ['barren', 'crowded', 'minimalist', 'empty']
+                Base Answer: B
+                Predicted Answer: <|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+
+Question: What is in the motorcyclist's mouth?
+Choices: A. toothpick B. food C. popsicle stick D. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {D}
+
+Question: Which number birthday is probably being celebrated?
+Choices: A. one B. ten C. nine D. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {D}
+
+Question: What best describes the pool of water?
+Choices: A. frozen B. fresh C. dirty D. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {C}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Question: What is the descriptive word for this surface?
+Choices: A. barren B. crowded C. minimalist D. empty
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{The surface is empty, as it has no objects or clutter on it. The desk is clear of any items, giving it a clean and minimalist appearance. The absence of objects on the desk makes it appear empty.}
+
+Answer: {D}<|eot_id|>
+                Ratinale: ['There are many visible objects in a small space without much unused space visible which is consistent with the definition of answer a.', 'There are many object including a cat on the desk space.', 'The area is really crowded and needs some room.']
+                direct_ans: ['desk', 'desktop', 'glossy', 'computer', 'busy', 'crowded', 'table', 'smooth', 'desk', 'cluttered']
+                ##############################################################################################################Invalid answer<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+
+Question: What is in the motorcyclist's mouth?
+Choices: A. toothpick B. food C. popsicle stick D. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {D}
+
+Question: Which number birthday is probably being celebrated?
+Choices: A. one B. ten C. nine D. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {D}
+
+Question: What best describes the pool of water?
+Choices: A. frozen B. fresh C. dirty D. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {C}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Question: What is the person on the left doing with their body?
+Choices: A. crouching B. leaping C. flying D. twirling
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{The person on the left is crouching. They are leaning forward with their knees bent and their hands out in front of them. The person is crouching.}<|eot_id|>##############################################################################################################
+                Image: 000000250766.jpg
+                Question: What kind of fruit is cut in half and darker than the other?
+                Choices: ['grapes', 'apples', 'lettuce', 'radish']
+                Base Answer: A
+                Predicted Answer: <|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+
+Question: What is in the motorcyclist's mouth?
+Choices: A. toothpick B. food C. popsicle stick D. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {D}
+
+Question: Which number birthday is probably being celebrated?
+Choices: A. one B. ten C. nine D. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {D}
+
+Question: What best describes the pool of water?
+Choices: A. frozen B. fresh C. dirty D. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {C}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Question: What kind of fruit is cut in half and darker than the other?
+Choices: A. grapes B. apples C. lettuce D. radish
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{The fruit is a radish. It is darker than the other fruits, which are red grapes. The radish is cut in half and is darker than the grapes.}
+
+Answer: {C}<|eot_id|>
+                Ratinale: ['Red grapes are cut up.', 'The fruit is a dark purple color.', 'There are grapes in the salad.']
+                direct_ans: ['grape', 'tomato', 'tomato', 'grapes', 'dates', 'grapes', 'grapes', 'dates', 'olive', 'tomato']
+                ##############################################################################################################
+                Image: 000000434459.jpg
+                Question: What flag is represented on the wall?
+                Choices: ['english', 'moravian', 'american', 'french']
+                Base Answer: C
+                Predicted Answer: <|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+
+Question: What is in the motorcyclist's mouth?
+Choices: A. toothpick B. food C. popsicle stick D. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {D}
+
+Question: Which number birthday is probably being celebrated?
+Choices: A. one B. ten C. nine D. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {D}
+
+Question: What best describes the pool of water?
+Choices: A. frozen B. fresh C. dirty D. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {C}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Question: What flag is represented on the wall?
+Choices: A. english B. moravian C. american D. french
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{The flag on the wall is a folded American flag, as indicated by the blue field with white stars. The flag is folded into a triangle, which is a common way to display the American flag.}
+
+Answer: {A}<|eot_id|>
+                Ratinale: ['The blue with the stars on it is the usa flag.', 'The white stars on the dark blue background are showing.', 'It has the blue color and white stars you see on an american flag.']
+                direct_ans: ["don't know", 'american', 'american', 'usa', 'cuba', 'united states', 'united states', 'american', 'usa', 'usa']
+                ##############################################################################################################
+                Image: 000000485237.jpg
+                Question: What are the orange vehicles for?
+                Choices: ['police', 'shuttle', 'passengers', 'air traffic']
+                Base Answer: D
+                Predicted Answer: <|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+
+Question: What is in the motorcyclist's mouth?
+Choices: A. toothpick B. food C. popsicle stick D. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {D}
+
+Question: Which number birthday is probably being celebrated?
+Choices: A. one B. ten C. nine D. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {D}
+
+Question: What best describes the pool of water?
+Choices: A. frozen B. fresh C. dirty D. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {C}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Question: What are the orange vehicles for?
+Choices: A. police B. shuttle C. passengers D. air traffic
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{The vehicles are yellow and have the word "shuttle" written on the side. They are driving on the tarmac near the airplanes. The vehicles are shuttle buses.}
+
+Answer: {B}<|eot_id|>
+                Ratinale: ['There are large planes.', 'They are there for the pilots to tell them where to go or not go.', 'They keep an eye on the planes.']
+                direct_ans: ['air traffic', 'guide planes', 'pulling plane', 'safety vehicle', 'service airplanes', 'transport', 'maintenance', 'food delivery', 'luggage', 'maintenance']
+                ##############################################################################################################
+                Image: 000000139099.jpg
+                Question: Where are we at?
+                Choices: ['fair', 'garage sale', 'street festival', 'flea market']
+                Base Answer: C
+                Predicted Answer: <|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+
+Question: What is in the motorcyclist's mouth?
+Choices: A. toothpick B. food C. popsicle stick D. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {D}
+
+Question: Which number birthday is probably being celebrated?
+Choices: A. one B. ten C. nine D. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {D}
+
+Question: What best describes the pool of water?
+Choices: A. frozen B. fresh C. dirty D. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {C}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Question: Where are we at?
+Choices: A. fair B. garage sale C. street festival D. flea market
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{There are many people walking around, and there are vendors selling fruits and vegetables. There are also cars and trees in the background. It appears to be a busy outdoor event.}
+
+Answer: {D}<|eot_id|>
+                Ratinale: ['A lot of things are sold on the street.', 'People are walking in the street.  there are vendors and tourists in the area.', 'The people are at a produce stand at a festival where some people are wearing hats.']
+                direct_ans: ['outdoor market', 'market', 'market', 'market', 'market', 'street festival', 'event', 'market', 'market', 'street']
+                ##############################################################################################################

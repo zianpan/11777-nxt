@@ -71,7 +71,6 @@ if __name__ == "__main__":
         to_load = False
     pg = PromptGenerator()
     val_aokvqa, coco_val_caption, coco_id_filename = prepare_dataset()
-    val_aokvqa, coco_val_caption, coco_id_filename = prepare_dataset()
 
     prompt_template = """
 You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
