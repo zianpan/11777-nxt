@@ -19,192 +19,321 @@ Answer: {2}
 Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
 
 <ERROR1> ANS NOT FOUND
-{The animal to the left has horns on its head, which are similar to the horns on the head of a ram. The horns on the animal to the left are curved and pointed, similar to the curved and pointed horns of a ram.}
+<CASE>
+{'split': 'val', 'image_id': 198960, 'question_id': '2GhdXLaZFBYHSip4rvYKfK', 'question': "The thing on the animal to the left's head is similar to what is on the head of what else?", 'choices': ['devil', 'zombie', 'vampire', 'witch'], 'correct_choice_idx': 0, 'direct_answers': ['different ear', 'he goat', 'elephant', 'bull', 'devil', 'rams', 'ram', 'buck', 'horns', 'sheep'], 'difficult_direct_answer': True, 'rationales': ['Animals with horns are in a pen.', 'The horns are used as the interpretation of the evils appearance.', 'There are horns on the sheep.']}
+<END OF CASE>
+{The horns on the animal to the left's head are similar to the horns on the head of a devil. The animal to the left has horns on its head, and a devil is often depicted as having horns.} 
+{A}
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 421923, 'question_id': '2rC38fZh4n6ZXcyrUEKukj', 'question': 'What is located on the shelves?', 'choices': ['books', 'dvds', 'games', 'food'], 'correct_choice_idx': 0, 'direct_answers': ['books', 'books', 'books', 'books', 'books', 'books', 'books', 'books', 'books', 'books'], 'difficult_direct_answer': False, 'rationales': ['The books are located.', 'There are various books situated on the shelf.', 'The items are made out of paper.']}
+<END OF CASE>
+{There are books on the shelves. The books are stacked on the shelves. The books are red, gray, and brown. The books are placed on the shelves.}
 
 Answer: {A}
 END OF ERROR
 <ERROR1> ANS NOT FOUND
-{The person on the left is crouching. They are bent over, with their knees slightly bent and their arms out to the sides, as if they are about to jump or dive into the water. The person is leaning forward, with their weight centered over their feet, and their body is low to the ground. This position suggests that they are preparing to move quickly or jump into action.}
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The man on the right is wearing jeans. The pants are blue and have a button fly, which is typical of denim. The man's pants are made of denim.}
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The child is standing in front of the table, looking at the cake with a candle on it. The child is holding a fork in their hand and appears to be interested in the cake. The child's attention is focused on the cake, and they seem to be waiting for someone to give them a piece. The child's interest in the cake suggests that they are excited about the birthday celebration and are looking forward to eating the cake.}
-
-Answer: {1}
-TRUE ANS:  2
-MODEL ANS:  1
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The fruit is dark brown and cut in half. The fruit is a radish. The radish is darker than the other fruit.}
-
-Answer: {3}
-TRUE ANS:  0
-MODEL ANS:  3
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The tissue box on the desk could help with a cold. The tissue box is located on the desk and is likely used to blow one's nose when they have a cold.}
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The shelves are holding books, as they are stacked neatly and appear to be bound with covers. The books are arranged in a way that suggests they are being displayed or stored, rather than being used for any other purpose.}
-
-Answer: {A}
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The cat is sitting on the floor, looking up at the oven, and appears to be waiting for food. The cat is likely to eat.}
-
-Answer: {2}
-TRUE ANS:  1
-MODEL ANS:  2
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The vehicles are likely shuttle buses, as they are commonly used to transport passengers between terminals and gates at airports. The vehicles are orange and have a distinctive design that is typical of shuttle buses. They are also positioned in a way that suggests they are waiting to transport passengers, rather than being used for police or air traffic control purposes.}
-
-Answer: {1}
-TRUE ANS:  3
-MODEL ANS:  1
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The dish appears to be a flatbread topped with prosciutto and arugula. The ingredients listed in the choices are flatbread, prosciutto, and arugula. Pepperoni is not visible in the image. Therefore, pepperoni is not an ingredient of this dish.}
-
-Answer: {D}
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The open doors are closest to the tree trunk. The open doors are in front of the tree trunk.}
-
-Answer: {3}
-TRUE ANS:  0
-MODEL ANS:  3
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The bottles appear to be placed on a shelf above the toilet, suggesting that they are bathroom products. The presence of a shower curtain and a bathtub further supports this conclusion. Additionally, the bottles have a similar shape and size to those commonly used for body wash or shampoo.}
-
-Answer: {0. body wash}
-TRUE ANS:  1
-MODEL ANS:  0
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The man is playing a sport game on a Nintendo Wii console, and the game appears to be boxing. The controller in his hands has a boxing glove attachment, and the TV screen shows a boxing match. The man is standing in front of the TV, holding the controllers, and appears to be actively playing the game. The presence of the Wii console and the boxing game on the TV screen strongly suggests that the man is playing Wii Boxing.}
+<CASE>
+{'split': 'val', 'image_id': 497568, 'question_id': '399Vdu2QjamF3vheUvbRg2', 'question': 'What type of transportation is this?', 'choices': ['air', 'water', 'road', 'road'], 'correct_choice_idx': 0, 'direct_answers': ['airplane', 'airplane', 'airplane', 'airplane', 'air', 'air', 'airplane', 'plane', 'airplane', 'airplane'], 'difficult_direct_answer': False, 'rationales': ['This is an airplane.', 'A large commercial airplane is at an airport.', 'An airplane is seen being prepared for flight.']}
+<END OF CASE>
+{The plane has a large wing and a long body, which are typical features of an airplane. The plane is parked on a runway, which is also a common location for airplanes. Additionally, the word "Alaska" is written on the side of the plane, which is a state in the United States that is known for its vast wilderness and rugged terrain, making it a popular destination for air travel.}
 
 Answer: {A}
 END OF ERROR
 <ERROR1> ANS NOT FOUND
-{There is a washing machine in front of the rug.The washing machine is silver and has a control panel on the front.The washing machine is in front of the rug.}
+<CASE>
+{'split': 'val', 'image_id': 55022, 'question_id': '3asRExdxmWQtJw4sv49AGZ', 'question': 'What is closest to the tree trunk?', 'choices': ['closed doors', 'walking person', 'sitting person', 'open doors'], 'correct_choice_idx': 0, 'direct_answers': ['building', 'woman', 'woman', 'dirt', 'ground', 'closed doors', 'flower wreath', 'bike', 'woman', 'not applicable'], 'difficult_direct_answer': False, 'rationales': ['The tree is directly in front of the building with closed doors, everything else is on the other side of the street.', 'A person is walking by.', 'In the far background one can see a tree trunk.   just in front of this you can see the outline of closed doors.']}
+<END OF CASE>
+{The walking person is closer to the tree trunk than the sitting person. The walking person is closer to the tree trunk.}
 END OF ERROR
 <ERROR1> ANS NOT FOUND
-{The dish is a stir-fry with broccoli, mushrooms, and noodles, which is a common Asian cuisine. The ingredients and cooking style suggest a traditional Asian dish.}
-
-Answer: {A}
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The men are wearing orange vests for visibility. The vests are bright orange, which makes them stand out against the gray and white surroundings. The men are likely wearing the vests to increase their visibility while working or performing tasks that require attention to safety.} {Visibility}
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The man is standing on the left platform, and the train is approaching the station. He is holding a suitcase in his hand, which suggests that he is preparing to board the train. The train's destination sign indicates that it is headed to a nearby city, and the man appears to be dressed for travel. Therefore, it is likely that the man on the left platform is going to board the train.}
-
-{Yes}
+<CASE>
+{'split': 'val', 'image_id': 308394, 'question_id': '3echacwmLBUByWpjh85Mfv', 'question': 'What is beside the person on the seat?', 'choices': ['white bag', 'food', 'paper bag', 'pillow'], 'correct_choice_idx': 0, 'direct_answers': ['bag', 'bag', 'white bag', 'shopping bag', 'plastic bag', 'plastic bag', 'plastic bag', 'bag', 'bag', 'bag'], 'difficult_direct_answer': False, 'rationales': ['It is a container stores give you when you purchase items', 'There is a plastic white grocery container next to her.', 'The person placed a white plastic bag next to him.']}
+<END OF CASE>
+{There is a white plastic bag on the seat beside the person.The bag is white.The bag is white.}
 END OF ERROR
 <ERROR2> INCORRECT ANS
-{They are in a meeting room with tables and chairs, and they are eating pizza from boxes. The atmosphere suggests a casual gathering, possibly during a break or after an event. The presence of laptops and other personal items on the tables also implies that the attendees are likely colleagues or acquaintances. The social nature of the gathering is further supported by the fact that people are standing and chatting in the background, indicating a relaxed and informal atmosphere.}
-
-Answer: {3}
-TRUE ANS:  2
-MODEL ANS:  3
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The flag is on the left side of the image, and it is pointing towards the right side of the image. The flag is attached to a pole that is attached to the top of the building. The building is located on the left side of the image. The flag is pointing towards the right side of the image, which means it is pointing towards the east.}
-
-Answer: {2}
-TRUE ANS:  3
-MODEL ANS:  2
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The boats are shaped like cars.The boats are shaped like cars.}
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The person has a fork in their hand and is holding a slice of the pizza with a banana pepper on it. Banana peppers are a type of pepper that can be risky for someone with a pepper allergy. The other options, pepperoni, mushrooms, and red peppers, do not pose the same risk.}
-
-Answer: {2}
-TRUE ANS:  1
-MODEL ANS:  2
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The security guard is sitting on a two-wheeler with his feet on the ground. The silver car is behind the two-wheeler. The blue car is not visible in the image. The dark car is not visible in the image. The security guard is closest to the silver car.}
+<CASE>
+{'split': 'val', 'image_id': 547816, 'question_id': '3qnvp3XRGpc5L6RMhRZ3gg', 'question': 'The visible bottles most likely contain what kind of items?', 'choices': ['body wash', 'shampoo conditioner', 'lotions', 'mouthwash'], 'correct_choice_idx': 1, 'direct_answers': ['shampoo', 'soap', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner'], 'difficult_direct_answer': False, 'rationales': ['They are located within the shower.', 'They are in the shower.', 'They are bottles of stuff to wash your hair with and condition it.']}
+<END OF CASE>
+{The bottles are located on the counter next to the sink, and they appear to be filled with a clear liquid. The liquid is likely to be body wash, as it is commonly used in bathrooms and is often packaged in clear bottles.}
 
 Answer: {0}
 TRUE ANS:  1
 MODEL ANS:  0
 END OF ERROR
 <ERROR1> ANS NOT FOUND
-{The men are wearing yellow vests for visibility, as they are standing on the side of a road and may be directing traffic or performing some other task that requires them to be seen by other drivers. The vests are likely reflective or brightly colored to increase their visibility in low-light conditions.}
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The skateboard is balanced on a black post with a chain attached to it. The skateboarder is performing a trick, and the post provides a stable surface for him to land on. The chain adds an element of danger and excitement to the trick, as it can potentially swing and hit the skateboarder if not executed correctly.}
+<CASE>
+{'split': 'val', 'image_id': 195842, 'question_id': '3vbWi2p7C9SSUHWSdbMYbE', 'question': 'What sport game is the man playing?', 'choices': ['wii boxing', 'wii baseball', 'wii football', 'wii tennis'], 'correct_choice_idx': 0, 'direct_answers': ['boxing', 'boxing', 'boxing', 'boxing', 'boxing', 'wii sports', 'boxing', 'wii', 'wii boxing', 'boxing'], 'difficult_direct_answer': False, 'rationales': ['There is a white device in her hand and she is looking at the tv which has boxing on the screen.', 'The game is wii boxing.', 'The game is in a boxing ring and looks like the wii boxing version.']}
+<END OF CASE>
+{The man is standing in front of a television, holding a Wii remote in each hand, and appears to be playing a boxing game on the screen. The game is likely Wii Boxing, as it is a popular title for the Wii console and the man's posture and equipment suggest he is engaged in a physical activity.}
 
-Answer: {0}
-TRUE ANS:  2
-MODEL ANS:  0
+Answer: {A}
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 212559, 'question_id': '45ZJiwQ8E4sqUTyJSUzEN3', 'question': 'What is the bin on the left made from?', 'choices': ['plastic', 'ceramic', 'steel', 'glass'], 'correct_choice_idx': 2, 'direct_answers': ['metal', 'metal', 'metal', 'food tray', 'wood', 'steel', 'aluminum', 'metal', 'steel', 'metal'], 'difficult_direct_answer': False, 'rationales': ['Most likely the bin is made of metal by its color and the need to weather the elements.', 'The bin is steel.', 'The shiny bin appears to be made from steel']}
+<END OF CASE>
+{The bin is made from metal. It is likely made from steel, as it is durable and can hold a large amount of hay. The bin's material is not explicitly stated, but its appearance and function suggest that it is made from steel.} {Steel}
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 463522, 'question_id': '49CisPCc2LiA5TUAdHZgXe', 'question': 'What type of animal is on a leash on the sidewalk?', 'choices': ['dog', 'tiger', 'cat', 'lion'], 'correct_choice_idx': 0, 'direct_answers': ['dog', 'horse', 'dog', 'horse', 'dog', 'dog', 'dog', 'dog', 'dog', 'dog'], 'difficult_direct_answer': False, 'rationales': ['The animal is a dog.', 'There is a woman on the sidewalk walking her dog on a leash.', "A dog is on the sidewalk since it's a terrier."]}
+<END OF CASE>
+{The animal on the leash is small, has four legs, and a tail. It is walking on a leash with its owner. The animal is a dog.}
+
+Answer: {A}
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 127182, 'question_id': '4C2cZitDfGX5ytw6YTcxiL', 'question': 'What is likely in front of the rug?', 'choices': ['refrigerator', 'pantry', 'washing machine', 'sink'], 'correct_choice_idx': 3, 'direct_answers': ['cupboard', 'sink', 'cupboard', 'sink', 'sink', 'sink', 'sink', 'cabinets', 'sink', 'sink'], 'difficult_direct_answer': False, 'rationales': ['The rug is in front of the sink.', 'Rugs are put in front of sinks.', 'Looking at the design of the kitchen that is where a sink is probably located and that is the place most people would put a rug.']}
+<END OF CASE>
+{The image shows a kitchen with white cabinets and a stainless steel dishwasher in front of a rug. The dishwasher is likely in front of the rug.}
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 104612, 'question_id': '4PvLY9C3GyARH3WSGYbYFq', 'question': 'What kind of cuisine is this?', 'choices': ['asian', 'american', 'african', 'european'], 'correct_choice_idx': 0, 'direct_answers': ['asian', 'asian', 'asian cuisine', 'healthy', 'chicken lomein', 'chinese', 'stir fry', 'asian', 'salad', 'chinese'], 'difficult_direct_answer': False, 'rationales': ['These have noodles and vegetables', 'It features noodles that are used in popular asian cuisine.', 'Asian cuisine features noodles.']}
+<END OF CASE>
+{The noodles are brown and the vegetables are broccoli, which is a common ingredient in Asian cuisine. The dish appears to be a stir-fry, which is also a popular Asian cooking technique. Additionally, the presence of soy sauce or other Asian seasonings can be seen in the background.}
+
+Answer: {A}
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 383443, 'question_id': '4Z7WvuLTj7VUpVtLL2W2g7', 'question': 'What type of sinks are shown?', 'choices': ['bathroom', 'workstation', 'kitchen', 'laundry'], 'correct_choice_idx': 0, 'direct_answers': ['bathroom', 'bathroom', 'bathroom', 'bathroom', 'bathroom sinks', 'bathroom sinks', 'bathroom sinks', 'bathroom', 'ceramic', 'bathroom'], 'difficult_direct_answer': False, 'rationales': ['This is in a room with a large tub', 'The sinks are in the bathroom.', 'The sinks are located in the bathroom.']}
+<END OF CASE>
+{The sinks are located in the bathroom. They are mounted on a countertop and have faucets attached to them. The sinks are also accompanied by a mirror above them, which is a common feature in bathrooms. Additionally, the presence of a bathtub and a toilet in the same room further supports the conclusion that these sinks are indeed located in a bathroom.}
+
+Answer: {A}
 END OF ERROR
 <ERROR2> INCORRECT ANS
-{The street sign reads "Green" and is located in front of a trolley car. The actress Eva Green is a well-known actress who has appeared in numerous films and television shows. The street name "Green" is likely named after her.}
+<CASE>
+{'split': 'val', 'image_id': 208363, 'question_id': '4j6bW4ChHncMKUnmnGAQQ2', 'question': 'They are likely having pizza at what kind of event?', 'choices': ['family', 'gaming', 'academic', 'social'], 'correct_choice_idx': 2, 'direct_answers': ['meeting', 'meeting', 'school event', 'meeting', 'party', 'working event', 'party', 'social', 'academic', 'party'], 'difficult_direct_answer': False, 'rationales': ['The chairs and the relative ages of the people in the image is consistent with answer a.', 'The people are mostly about the same age.  they are sitting in desks.', 'The men look like students.']}
+<END OF CASE>
+{They are all wearing casual clothing and are in a room with tables and chairs, which suggests a social gathering. The presence of pizza boxes and people eating pizza also indicates a casual, social setting. Additionally, the atmosphere appears relaxed and informal, which is consistent with a social event.}
+
+Answer: {3}
+TRUE ANS:  2
+MODEL ANS:  3
+END OF ERROR
+<ERROR2> INCORRECT ANS
+<CASE>
+{'split': 'val', 'image_id': 528578, 'question_id': '4xBq7ak8qCE92z8vddKXtu', 'question': 'What direction is the narrow end of the flag pointing?', 'choices': ['north', 'south', 'east', 'west'], 'correct_choice_idx': 3, 'direct_answers': ['left side', 'left', 'north', 'left', 'west', 'left', 'left', 'left', 'sideways', 'windward'], 'difficult_direct_answer': False, 'rationales': ["It's pointing to the west.", 'It is pointing to the west.', 'The flag is visible and the narrow end is point to the left of the image. left and west are often synonymous when referring to directional ordinates.']}
+<END OF CASE>
+{The flag is pointing towards the left side of the image.The flag is pointing towards the left.}
+
+Answer: {1}
+TRUE ANS:  3
+MODEL ANS:  1
+END OF ERROR
+<ERROR0> CONTENT NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 456496, 'question_id': '4yd2xqYxWenwSYEucHnNXR', 'question': 'In what nation is this scene located?', 'choices': ['spain', 'china', 'italy', 'france'], 'correct_choice_idx': 3, 'direct_answers': ['paris', 'france', 'france', 'paris', 'france', 'france', 'france', 'france', 'france', 'france'], 'difficult_direct_answer': False, 'rationales': ['If you notice the eiffel tower, that gives it away as to where they are.', 'The eiffel tower is in the back.', 'There is the eiffel tower.']}
+<END OF CASE>
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {A } or {B} or {C}or {D} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+Question: What is in the motorcyclist's mouth?
+Choices: 0. toothpick 1. food 2. popsicle stick 3. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {3}
+Question: Which number birthday is probably being celebrated?
+Choices: 0. one 1. ten 2. nine 3. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {3}
+Question: What best describes the pool of water?
+Choices: 0. frozen 1. fresh 2. dirty 3. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {2}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Question: In what nation is this scene located?
+Choices: 0. spain 1. china 2. italy 3. france
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the background.The woman is sitting on a stone bench, and the Eiffel Tower is visible in the
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 82821, 'question_id': '5AhBQW2ucGSwJbPTtXHTFd', 'question': 'What are the boats shaped like?', 'choices': ['trains', 'tanks', 'cars', 'planes'], 'correct_choice_idx': 2, 'direct_answers': ['cars', 'cars', 'cars', 'cars', 'cars', 'cars', 'cars', 'cars', 'cars', 'cars'], 'difficult_direct_answer': False, 'rationales': ['One is painted like a volkswagen beetle.', 'The boats appear to have round tires and headlights.', 'The boats in the water have seats and tires and a windshield just like little cars would.']}
+<END OF CASE>
+{The boats are shaped like cars. They are shaped like cars with rounded fronts and flat backs. The boats are shaped like cars.}
+END OF ERROR
+<ERROR2> INCORRECT ANS
+<CASE>
+{'split': 'val', 'image_id': 27696, 'question_id': '5QURaRC8e3HjPpYC2GrX4u', 'question': 'Which vegetable on the pizza would be risky for someone with a certain allergy?', 'choices': ['pepperoni', 'mushrooms', 'banana peppers', 'red peppers'], 'correct_choice_idx': 1, 'direct_answers': ['mushrooms', 'cheese', 'mushroom', 'mushrooms', 'pepper', 'mushrooms', 'tomato', 'spice', 'mushroom', 'peppers'], 'difficult_direct_answer': False, 'rationales': ['Mushrooms are less harmful to get an allergy.', 'These have the most common allergies for people', 'The topping of the pizza comprises of slices of mushrooms.']}
+<END OF CASE>
+{The banana peppers are green and curled up, which indicates they are unripe and may be toxic.}
 
 Answer: {2}
 TRUE ANS:  1
 MODEL ANS:  2
 END OF ERROR
 <ERROR2> INCORRECT ANS
-{The mushrooms are the most flavorful ingredient. The fish is cooked and seasoned, but the mushrooms have a more intense flavor and aroma. The broccoli is a side dish and does not have a strong flavor compared to the mushrooms. The plate is an inanimate object and does not have a flavor.}
+<CASE>
+{'split': 'val', 'image_id': 383289, 'question_id': '5S32A279iAfRetbkeWJd77', 'question': 'What vehicle is closest to the security guard?', 'choices': ['silver car', 'two-wheeler', 'bluecar', 'dark car'], 'correct_choice_idx': 1, 'direct_answers': ['scooter', 'silver', 'silver car', 'segway', 'two-wheeler', 'segway', 'scooter', 'gray car', 'scooter', 'segway'], 'difficult_direct_answer': False, 'rationales': ['The segway, not any of the cars, is the closest to the security guard.', 'The vehicle with two wheels is being used by the security guard.', 'The security guard is resting his feet on a segway so it is the closest vehicle to him.']}
+<END OF CASE>
+{The silver car is closest to the security guard.The car is parked next to the security guard.The car is silver.}
+
+Answer: {0}
+TRUE ANS:  1
+MODEL ANS:  0
+END OF ERROR
+<ERROR2> INCORRECT ANS
+<CASE>
+{'split': 'val', 'image_id': 419408, 'question_id': '5TbBvzzr5N35YUs7yBd7Ah', 'question': 'What is the skateboard balanced on?', 'choices': ['post', 'air', 'chain', 'ground'], 'correct_choice_idx': 2, 'direct_answers': ['chain', 'rope', 'posts', 'rope', 'fence', 'chain', 'post', 'ropes', 'chain link', 'rope'], 'difficult_direct_answer': False, 'rationales': ['He is jumping up on a chain.', "There's too much give for it to be a more sturdy item, and these interlocking links to form a longer item.", 'He has it on the links of the metal rope between the poles.']}
+<END OF CASE>
+{The skateboard is balanced on a black post. The skateboarder is balancing on a black metal post.}
+
+Answer: {0}
+TRUE ANS:  2
+MODEL ANS:  0
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 574702, 'question_id': '5Y5u3gnReRQbzkRnGw5ywd', 'question': 'What is the gray street made up of?', 'choices': ['asphalt', 'sand', 'stone', 'wood'], 'correct_choice_idx': 2, 'direct_answers': ['bricks', 'cobble stone', 'hexagons', 'brick', 'hexagons', 'stones', 'stone', 'cobblestone', 'bikes', 'stone'], 'difficult_direct_answer': False, 'rationales': ['The street has pavers making it up.', 'The ground is made of stone.', 'The street is stone.']}
+<END OF CASE>
+{The street is made up of stone. The street is paved with stone bricks.}
+END OF ERROR
+<ERROR2> INCORRECT ANS
+<CASE>
+{'split': 'val', 'image_id': 86220, 'question_id': '5aRkxnYoakzDQFyDGb9qJ2', 'question': 'The name of the street is the same as the last name of what actress?', 'choices': ['eva mendes', 'jessica biel', 'eva green', 'jessica alba'], 'correct_choice_idx': 1, 'direct_answers': ['green', 'jessica biel', 'eva green', 'green', 'eva green', 'eva', 'eva green', 'eva green', 'signal', 'michelle green'], 'difficult_direct_answer': False, 'rationales': ["Jessica biel's name matches.", 'The name is biel.', 'The street sign says green on it.']}
+<END OF CASE>
+{The name of the street is Green Street. The last name of the actress is Green. The actress is Eva Green.}
+
+Answer: {2}
+TRUE ANS:  1
+MODEL ANS:  2
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 277689, 'question_id': '5aXXZiPUcUzScs2do5tjYs', 'question': 'How was the cake decorated?', 'choices': ['drawn', 'piping tip', 'fork', 'sprinkled'], 'correct_choice_idx': 1, 'direct_answers': ['roses', 'piping tip', 'elaborate frosting', 'bakery', 'carefully', 'icing', 'flowers', 'frosting roses', 'frosting', 'icing'], 'difficult_direct_answer': True, 'rationales': ["The precision of these frosting flower's and the texture of this icing implies a fine tip.", 'With a piping tip.', 'The frosting on the cake has many loops and squiggles.']}
+<END OF CASE>
+{The cake is decorated with white icing and red flowers. The icing is piped on in a decorative pattern, and the flowers are piped on as well. The cake is decorated with piping tip.}
+END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 144932, 'question_id': '5cNGmGcUxJP7rwHnc6BXrs', 'question': 'The green object on the smaller boat is used as what?', 'choices': ['cabin', 'restroom', 'dining', 'kitchen'], 'correct_choice_idx': 1, 'direct_answers': ['flotation', 'bathroom', 'restroom', 'restroom', 'bathroom', 'portapotty', 'toilet', 'outhouse', 'potty', 'shelter'], 'difficult_direct_answer': False, 'rationales': ['The green object is a portable toilet.', 'This small unit is used traditionally as a bathroom.', 'The object is for the bathroom.']}
+<END OF CASE>
+{The green object on the smaller boat is a portable toilet. The green object is a portable toilet, which is used as a restroom.}
+END OF ERROR
+<ERROR2> INCORRECT ANS
+<CASE>
+{'split': 'val', 'image_id': 386352, 'question_id': '5fDUuYWCZMudfXVEPywFYc', 'question': 'Who has the same color hair as this woman?', 'choices': ['phoebe tonkin', 'maria sharapova', 'serena williams', 'nina dobrev'], 'correct_choice_idx': 1, 'direct_answers': ['maria sharapova', 'paris hilton', 'sitting guy', 'skin', 'swedish persons', 'spectectors', 'no one', 'no one', 'blake lively', 'heidi klum'], 'difficult_direct_answer': True, 'rationales': ['A famous female tennis player with blond hair.', 'Maria sharapova has the same color hair', 'They both are blondes']}
+<END OF CASE>
+{The woman in the image has blonde hair. The only other person with blonde hair is Phoebe Tonkin. Therefore, Phoebe Tonkin has the same color hair as this woman.}
+
+Answer: {0}
+TRUE ANS:  1
+MODEL ANS:  0
+END OF ERROR
+<ERROR2> INCORRECT ANS
+<CASE>
+{'split': 'val', 'image_id': 34205, 'question_id': '5wfUGvXtyEw22kABjGaHxT', 'question': 'Which ingredient is the most flavorful?', 'choices': ['mushrooms', 'fish', 'plate', 'broccoli'], 'correct_choice_idx': 1, 'direct_answers': ['lemon juice', 'chicken', 'mushrooms', 'broccoli', 'mushrooms', 'pepper', 'parsley', 'mushroom', 'pepper', 'fish'], 'difficult_direct_answer': False, 'rationales': ['The plate is not an ingredient. the broccoli and mushrooms are bland compared to the protein.', 'It is the seasoned part of the dish.', 'Vegetables are blander than fish which has a strong taste. there are a lot of spices on top which will increase the flavor.']}
+<END OF CASE>
+{The mushrooms are seasoned with herbs and spices, which adds to their flavor. The fish is also seasoned, but the mushrooms have a stronger aroma and flavor. The broccoli is not seasoned, and the plate is just a container.}
 
 Answer: {0}
 TRUE ANS:  1
 MODEL ANS:  0
 END OF ERROR
 <ERROR1> ANS NOT FOUND
-{The motorcycle is parked in a room with a wooden floor and a shelf in the background, which suggests that it is in a home or residential setting. The presence of a dog wearing a helmet in the same room further supports this conclusion, as it is unlikely that a dog would be allowed to wear a helmet in a public place like a store or expo. Therefore, based on the context and surroundings, the motorcycle is most likely parked at home.} {Home}
+<CASE>
+{'split': 'val', 'image_id': 115245, 'question_id': '5z9Zmf4GRKoCa7igqv4Ef7', 'question': 'What are these cases for?', 'choices': ['clothing', 'instruments', 'clothing', 'food'], 'correct_choice_idx': 0, 'direct_answers': ['travel', 'travel', 'parking', 'travelers clothes', 'traveling luggage', 'suitcase', 'travel', 'traveling', 'clothing', 'travel'], 'difficult_direct_answer': False, 'rationales': ['There are several suitcases.', 'The bags are for storing clothing.', 'The cases contain clothes since people have packed for a trip.']}
+<END OF CASE>
+{The cases are for clothing. The bags are filled with clothing. They are likely to be carrying clothing.}
 END OF ERROR
 <ERROR1> ANS NOT FOUND
-{The large circular window in the back wall of the room is letting in natural light. The window is shaped like a clock face. The natural light is streaming into the room through the clock.}
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The man is standing in front of a green curtain, and there is a couch with several pillows behind him. The background is a large poster of a building, which suggests that the man may be speaking to an audience at a meeting or conference. The fact that the man is wearing a dress shirt and tie also implies a more formal setting. Additionally, the man's body language, such as his posture and hand gestures, suggests that he is engaged in a conversation with a small group of people. Therefore, it is likely that the man is speaking to a single person or a small group of people in a meeting setting.}
-
-Answer: {1}
-TRUE ANS:  3
-MODEL ANS:  1
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{The cattle are eating hay from the ground, as indicated by the piles of hay on the ground and the cattle's heads lowered to eat. The cattle are eating.}
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The licence plate is orange and has blue letters and numbers. It is attached to the back of a motorcycle. The motorcycle is parked in front of a building with a large sign that says "500" in large white letters. The licence plate is from New Jersey.}
-
-Answer: {2}
-TRUE ANS:  3
-MODEL ANS:  0
-END OF ERROR
-<ERROR1> ANS NOT FOUND
-{They are skiing. The people in the picture are wearing winter clothing and holding ski poles, and they are standing on a snowy slope. The ground is covered in snow, and there are ski tracks visible.}
+<CASE>
+{'split': 'val', 'image_id': 456496, 'question_id': '64yPpMFbTw3CnmTULYZWTp', 'question': 'In which major city is the woman most likely sitting outdoors?', 'choices': ['paris', 'new york', 'johannesburg', 'london'], 'correct_choice_idx': 0, 'direct_answers': ['paris', 'paris', 'paris', 'paris', 'france', 'paris', 'france', 'paris', 'paris', 'paris'], 'difficult_direct_answer': False, 'rationales': ['This woman is most likely sitting outdoors in the city of paris in front of the eiffel tower.', "One can tell it's paris since the eiffel tower is in the distance.", 'Eiffel tower is in back.']}
+<END OF CASE>
+{The woman is sitting in front of the Eiffel Tower, which is a famous landmark in Paris. The presence of the Eiffel Tower suggests that the woman is likely in Paris, France.}
 
 Answer: {A}
 END OF ERROR
 <ERROR1> ANS NOT FOUND
-{The street is lined with shops and stores, and there are people walking around. The woman is on her phone, possibly making a call or checking her messages. There are no visible government buildings or warehouses in the background, and the area appears to be bustling with activity. Therefore, the most likely type of city district is commercial.}
+<CASE>
+{'split': 'val', 'image_id': 472375, 'question_id': '66abRGQG535WgzgU5Ue9ru', 'question': 'In what location is the motorcycle parked most likely?', 'choices': ['store', 'sidewalk', 'home', 'expo'], 'correct_choice_idx': 2, 'direct_answers': ['hallway', 'home', 'bedroom', 'street', 'garage', 'garage', 'livingroom', 'garage', 'garage', 'garage'], 'difficult_direct_answer': False, 'rationales': ['The location is at home.', 'The flooring and the furniture present in the image with the pet also visible are all consistent features of a residential environment.', 'The motorcycle is most likely parked inside where this person lives. there is a bookcase, a pet dog, and a parquet floor.']}
+<END OF CASE>
+{The motorcycle is parked in the home. The motorcycle is parked in a room with a dog sitting on the floor next to it, and there are shelves with various items on them in the background. The motorcycle is parked indoors, likely in a home.}
 END OF ERROR
 <ERROR2> INCORRECT ANS
-{There is a red cross on a blue background near the round road sign. The red cross is typically used to indicate "no entry" or "prohibited." The sign is located near the road, which suggests that it is related to traffic or vehicle movement. Therefore, the most likely answer is that turning is prohibited near the round road sign with a red cross on a blue background.}
+<CASE>
+{'split': 'val', 'image_id': 170099, 'question_id': '6J2yw53YiEDoNpMSt9mSsC', 'question': 'What type of audience is the man likely speaking to?', 'choices': ['protest', 'single person', 'political rally', 'meeting'], 'correct_choice_idx': 3, 'direct_answers': ['coworkers', 'college students', 'designers', 'theater', 'office', 'art', 'women', 'business', 'meeting', 'stage'], 'difficult_direct_answer': True, 'rationales': ['The man is in a meeting.', "He looks like he's in a smaller venue for speaking.", 'A man dressed in a dress shirt and tie is addressing about an object. he is talking to other people about it.']}
+<END OF CASE>
+{The man is standing in front of a green curtain, and there is a couch with several pillows behind him. The man appears to be speaking, but there are no other people visible in the image. The setting suggests a more intimate or private setting rather than a large public gathering.}
 
 Answer: {1}
-TRUE ANS:  0
-MODEL ANS:  1
-END OF ERROR
-<ERROR2> INCORRECT ANS
-{The man is standing on top of a horse, holding the reins, and appears to be in motion. The background is blurred, suggesting that the man is moving quickly. The man is not wearing a costume or performing any tricks, and there is no audience present. The man is not feeding the horse, as he is not holding any food. The man is not training the horse, as he is not using any training tools or equipment. The man is not performing a show, as there is no audience present. The man is riding the horse, as he is standing on top of it and holding the reins.}
-
-Answer: {1}
-TRUE ANS:  0
+TRUE ANS:  3
 MODEL ANS:  1
 END OF ERROR
 <ERROR1> ANS NOT FOUND
-{The walls are a light blue-green color. The walls are painted a blue-green color. The walls are green.}
+<CASE>
+{'split': 'val', 'image_id': 41872, 'question_id': '6Ps8BgA4pbvK4eKToCDQqu', 'question': 'What seems to be contained in the nook underneath the TV?', 'choices': ['bookshelf', 'lamp', 'fireplace', 'stereo'], 'correct_choice_idx': 2, 'direct_answers': ['fireplace', 'fire', 'fireplace', 'fireplace', 'fireplace', 'fireplace', 'fireplace', 'fire', 'fire', 'fireplace'], 'difficult_direct_answer': False, 'rationales': ['There are logs with fire.', 'There could be fire contained in the nook underneath the tv.', 'There is wood and fire.']}
+<END OF CASE>
+{A fireplace is visible in the nook underneath the TV. The fireplace has a lit fire inside it.}
 END OF ERROR
+<ERROR1> ANS NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 137576, 'question_id': '6QuPF6pNBjs3DEXQh4AQt4', 'question': 'Why do the cattle have their heads down to the ground?', 'choices': ['to eat', 'to drink', 'to play', 'to sleep'], 'correct_choice_idx': 0, 'direct_answers': ['eating', 'to eat', 'grazing', 'feeding', 'eating hay', 'eating', 'eating hay', 'eating hay', 'eating', 'food'], 'difficult_direct_answer': False, 'rationales': ['The cows are awake. there is food, not water, on the ground.', 'There are cows visibly extending their mouths and even tongues towards the hay in front of them. hay is something cows frequently eat and it appears to be intentionally placed by the tractor likely for this prupose.', "Animals don't have thumbs for the most part and must put there face in it to eat."]}
+<END OF CASE>
+{The cattle have their heads down to the ground because they are eating hay from the ground. The cattle are eating hay.}
+END OF ERROR
+<ERROR0> CONTENT NOT FOUND
+<CASE>
+{'split': 'val', 'image_id': 293245, 'question_id': '6SYTPwk8BEHMp486oLsFgw', 'question': 'What state was the licence plate issues?', 'choices': ['connecticut', 'rhode island', 'new jersey', 'new york'], 'correct_choice_idx': 3, 'direct_answers': ['new york', 'new york', 'new york', 'new york', 'new york', 'new york', 'new york', 'new york', 'new york', 'new york'], 'difficult_direct_answer': False, 'rationales': ['The name of the state is written on the top of the license plate.', 'You can tell by the name on the plate as to where it is from.', 'The license plate has the words "new york" written on it.']}
+<END OF CASE>
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {A } or {B} or {C}or {D} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+Question: What is in the motorcyclist's mouth?
+Choices: 0. toothpick 1. food 2. popsicle stick 3. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {3}
+Question: Which number birthday is probably being celebrated?
+Choices: 0. one 1. ten 2. nine 3. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {3}
+Question: What best describes the pool of water?
+Choices: 0. frozen 1. fresh 2. dirty 3. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {2}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Question: What state was the licence plate issues?
+Choices: 0. connecticut 1. rhode island 2. new jersey 3. new york
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that say "NJ" on it. The licence plate is orange and blue with white letters that
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+<CASE>
+{'split': 'val', 'image_id': 23126, 'question_id': '6pLYuYn5suAGgoBgJ4Z6HC', 'question': 'What is the activity being performed?', 'choices': ['show performance', 'training horse', 'riding horse', 'feeding horse'], 'correct_choice_idx': 0, 'direct_answers': ['riding horse', 'roman riding', 'balance', 'riding', 'horseback riding', 'horse riding', 'show performance', 'riding horses', 'horseback riding', 'riding'], 'difficult_direct_answer': False, 'rationales': ['He is doing tricks for a competition', 'They are performing for crowd.', 'The activity is a show.']}
+<END OF CASE>
+{The man is standing on top of a horse, holding the reins in his hands, and the horse is moving quickly, as evidenced by the blurred background. The man appears to be in control of the horse, and the horse's ears are perked up, indicating that it is focused on the activity. The man is also wearing a uniform with a logo on it, which suggests that he may be a professional horse trainer or rider. Additionally, the fact that the horse is moving quickly and the man is standing on its back suggests that they are engaging in an activity that requires skill and coordination, such as training or riding a horse.}
+
+Answer: {1}
+TRUE ANS:  0
+MODEL ANS:  1
+END OF ERROR
+<ERROR2> INCORRECT ANS
+<CASE>
+{'split': 'val', 'image_id': 579970, 'question_id': '6pTSACKywJKkVRa7WGmzKe', 'question': 'What color are the walls in the room?', 'choices': ['orange', 'yellow', 'blue', 'green'], 'correct_choice_idx': 3, 'direct_answers': ['green', 'green', 'green', 'green', 'grey/green', 'green', 'green', 'dark green', 'green', 'grey'], 'difficult_direct_answer': False, 'rationales': ['The light from the window shines on the wall showing that the paint color is green.', 'A home in a room has white trim and a darker color wall.', 'In this darkness, the walls look green.']}
+<END OF CASE>
+{The walls are painted a shade of green. The walls are a medium green color.}
+
+Answer: {2}
+TRUE ANS:  3
+MODEL ANS:  2
+END OF ERROR
+final confidence:  0.832512265247486
+final accuracy:  0.6534653465346535

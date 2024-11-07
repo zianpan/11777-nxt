@@ -18,6 +18,7 @@ from utls import *
 from prompt_generator import *
 import torch.nn.functional as F
 
+
 # %%
 if to_load:
     model = Llama32()
@@ -30,25 +31,30 @@ path_dict = {"val":"/home/ubuntu/data/coco/val2017/",
 
 # %%
 
+# prompt_template = """
+# You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{0}} or {{1}} or {{2}} or {{3}} surrounded by curly braces as well as rationales of why you chose that option.
+# The rationales should also include in curly braces the answer to the question.
+
+# Here are some examples that you can follow:
+# {}
+
+# Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+# """
+
 prompt_template = """
-You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{0}} or {{1}} or {{2}} or {{3}} surrounded by curly braces as well as rationales of why you chose that option.
 The rationales should also include in curly braces the answer to the question.
-
-Here are some examples that you can follow:
-{}
-
 Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
 """
-
 # %%
 val_aokvqa, coco_val_caption, coco_id_filename = prepare_dataset()
 
-# %%
+# # %%
 pg0123 = PromptGenerator0123(prompt_template = prompt_template)
-prompt_template = pg0123.generate_template(val_aokvqa[:3])
+# prompt_template = pg0123.generate_template(val_aokvqa[:3])
 
 # %%
-prompt_template = pg0123.generate_template(val_aokvqa[:3])
+# prompt_template = pg0123.generate_template(val_aokvqa[:3])
 
 # %%
 print(prompt_template)
@@ -83,9 +89,13 @@ for i in trange(4,104):
     # extracted_content = text_ans[-20:]
     except:
         print("<ERROR0> CONTENT NOT FOUND")
+        print("<CASE>")
+        print(meta_data_one_sample)
+        print("<END OF CASE>")
         print(text_ans)
         print("<END OF ERROR>")
         del output
+        ind += 1
         continue
 
     logits = output.scores
@@ -100,6 +110,7 @@ for i in trange(4,104):
 
     confi = np.mean(local_confi)
     overall_confidence.append(confi)
+    del confi, probabilities, logits, token_ids
 
     model_ans = -1
     for num in [0,1,2,3]:
@@ -109,9 +120,13 @@ for i in trange(4,104):
 
     if model_ans == -1:
         print("<ERROR1> ANS NOT FOUND")
+        print("<CASE>")
+        print(meta_data_one_sample)
+        print("<END OF CASE>")
         print(extracted_content)
         print("END OF ERROR")
         del output
+        ind += 1
         continue
 
     
@@ -119,6 +134,9 @@ for i in trange(4,104):
         cnt += 1
     else:
         print("<ERROR2> INCORRECT ANS")
+        print("<CASE>")
+        print(meta_data_one_sample)
+        print("<END OF CASE>")
         print(extracted_content)
         print("TRUE ANS: ", base_ans)
         print("MODEL ANS: ", model_ans)
@@ -129,9 +147,12 @@ for i in trange(4,104):
         print('current accuracy', cnt/ind)
     
     ind += 1
-    del output, text_ans, extracted_content, confi, probabilities, logits, token_ids,meta_data_one_sample
+    del output, text_ans, extracted_content, meta_data_one_sample
     # del output, text_ans, extracted_content, confi, probabilities, logits, token_ids,meta_data_one_sample
     torch.cuda.empty_cache()
+
+print('final confidence: ', np.mean(overall_confidence))
+print('final accuracy: ', cnt/ind)
 
 
 # %%
