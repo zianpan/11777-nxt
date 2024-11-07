@@ -1,2 +1,0 @@
-from .okvqa import OKVQA
-

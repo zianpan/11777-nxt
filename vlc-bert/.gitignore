@@ -1,7 +1,0 @@
-data/coco
-data/vcr
-model/pretrained_model
-__pycache__
-common/lib/roi_pooling
-output
-cache

@@ -1,2 +1,0 @@
-from .aokvqa import AOKVQA
-

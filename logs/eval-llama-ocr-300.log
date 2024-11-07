@@ -1,0 +1,109 @@
+
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {A } or {B} or {C}or {D} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+Question: What is in the motorcyclist's mouth?
+Choices: 0. toothpick 1. food 2. popsicle stick 3. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {3}
+Question: Which number birthday is probably being celebrated?
+Choices: 0. one 1. ten 2. nine 3. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {3}
+Question: What best describes the pool of water?
+Choices: 0. frozen 1. fresh 2. dirty 3. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {2}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+
+<ERROR1> ANS NOT FOUND
+{The man on the right is wearing jeans. The man is wearing light blue jeans. The man is wearing denim pants.}
+{'split': 'val', 'image_id': 163640, 'question_id': '2PGwvdFESLvwfFCwK5pbYu', 'question': 'What type of pants is the man on the right wearing?', 'choices': ['linen', 'corduroy', 'silk', 'denim'], 'correct_choice_idx': 3, 'direct_answers': ['jeans', 'blue jeans', 'jeans', 'denim', 'jeans', 'jeans', 'jeans', 'jeans', 'jeans', 'blue jeans'], 'difficult_direct_answer': False, 'rationales': ['The man is wearing blue pants that have the style and look to be of the consistency of jeans and denim.', 'The colour and design is consistent of that of denim jeans.', 'The man is wearing denim because he is wearing jeans which are made out of denim']}
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The cat is sitting on the floor, looking up at something out of frame, and its tail is extended. The cat appears to be waiting for food.}
+
+Answer: {2}
+{'split': 'val', 'image_id': 407960, 'question_id': '2vGs6CLETM2BJPstdHjku9', 'question': 'What activity does the cat appear most likely to do?', 'choices': ['drink', 'jump', 'eat', 'sleep'], 'correct_choice_idx': 1, 'direct_answers': ['jump', 'jump', 'watching television', 'jump', 'eat food', 'jump', 'jump', 'jump', 'beg', 'eat'], 'difficult_direct_answer': False, 'rationales': ['A cat is looking at a surface up above. cats can jump well.', 'The cat is looking up as if to judge if he can make a jump or not.', "The position of its body imply that it's about to a. the other options also don't match."]}
+TRUE ANS:  1
+MODEL ANS:  2
+<END OF ERROR>
+current accuracy:  0.8823529411764706
+<ERROR2> INCORRECT ANS
+The orange vehicles in the image are likely shuttle buses, as they are designed to transport passengers between the airport terminal and the aircraft. The vehicles are positioned near the aircraft, suggesting that they are being used for this purpose.
+
+Answer: {1}
+{'split': 'val', 'image_id': 485237, 'question_id': '3R6SnZ4MRGXXvao5ARVE8e', 'question': 'What are the orange vehicles for?', 'choices': ['police', 'shuttle', 'passengers', 'air traffic'], 'correct_choice_idx': 3, 'direct_answers': ['air traffic', 'guide planes', 'pulling plane', 'safety vehicle', 'service airplanes', 'transport', 'maintenance', 'food delivery', 'luggage', 'maintenance'], 'difficult_direct_answer': True, 'rationales': ['There are large planes.', 'They are there for the pilots to tell them where to go or not go.', 'They keep an eye on the planes.']}
+TRUE ANS:  3
+MODEL ANS:  1
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The company producing the device in her hand is from Japan. The Nintendo Wii is a popular gaming console that was first released in 2006. It was developed and published by Nintendo, a Japanese video game company. The Wii was known for its innovative motion controls and family-friendly games.}
+
+Answer: {2}
+{'split': 'val', 'image_id': 445792, 'question_id': '3SKKn3bQ4xhiDpkesifdod', 'question': 'The company producing the device in her hand is from what country?', 'choices': ['usa', 'china', 'japan', 'spain'], 'correct_choice_idx': 2, 'direct_answers': ['japan', 'sumsung', 'japan', 'japan', 'japan', 'china', 'japan', 'china', 'japan', 'japan'], 'difficult_direct_answer': False, 'rationales': ['This is the wii game', 'The girl is using a wii which a product of nintendo which is a japanese company.', 'Japan produces this device.']}
+TRUE ANS:  2
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The image shows a plate of food with flatbread, prosciutto, and arugula. The dish does not appear to contain pepperoni.}
+
+Answer: {A}
+{'split': 'val', 'image_id': 312192, 'question_id': '3X8TsFBRS7mBsBbyFDzRdb', 'question': 'Which is not an ingredient of this dish?', 'choices': ['flatbread', 'prosciutto', 'arugula', 'pepperoni'], 'correct_choice_idx': 3, 'direct_answers': ['ketchup', 'salad', 'fish', 'ham', 'apple', 'marshmallow', 'pineapple', 'water', 'pepperoni', 'grapes'], 'difficult_direct_answer': True, 'rationales': ["There isn't anything that is deep red on the plate.", 'Pepperoni is there.', 'There is no dark round meat on this pizza so it is missing.']}
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+The image shows a room with a pink bicycle in the foreground and several other bicycles in the background. The question asks what is closest to the tree trunk.
+
+Upon examining the image, we can see that there are no trees or tree trunks visible. Therefore, it is not possible to determine what is closest to the tree trunk.
+
+However, if we were to assume that the image is taken in a park or a similar outdoor setting, we could look for objects that are near the center of the image. In this case, there are several people visible in the background, but none of them appear to be standing near a tree trunk.
+
+Based on the information provided, we cannot determine what is closest to the tree trunk. Therefore, the correct answer is:
+
+{None of the above}
+
+This option is chosen because it is the only one that accurately reflects the lack of information provided in the image.
+{'split': 'val', 'image_id': 55022, 'question_id': '3asRExdxmWQtJw4sv49AGZ', 'question': 'What is closest to the tree trunk?', 'choices': ['closed doors', 'walking person', 'sitting person', 'open doors'], 'correct_choice_idx': 0, 'direct_answers': ['building', 'woman', 'woman', 'dirt', 'ground', 'closed doors', 'flower wreath', 'bike', 'woman', 'not applicable'], 'difficult_direct_answer': False, 'rationales': ['The tree is directly in front of the building with closed doors, everything else is on the other side of the street.', 'A person is walking by.', 'In the far background one can see a tree trunk.   just in front of this you can see the outline of closed doors.']}
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The hat says "HAPPY BIRTHDAY" in yellow letters on a red background. The boy is wearing a party hat that says "HAPPY BIRTHDAY".}
+{'split': 'val', 'image_id': 200421, 'question_id': '3ef8KXbKoJaJZyVmxVZMaq', 'question': 'What does it say on the boys hat?', 'choices': ['happy birthday', 'huggy buggy', 'herpy derpy', 'huggy harry'], 'correct_choice_idx': 0, 'direct_answers': ['happy birthday', 'happy birthday', 'happy birthday', 'happy birthday', 'happy birthday', 'happy birthday', 'happy birthday', 'happy birthday', 'happy birthday', 'happy birthday'], 'difficult_direct_answer': False, 'rationales': ['The boy is celebrating a birthday.', 'This is for a party', 'The party hat reads "happy birthday".']}
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The bottles are placed on the counter next to the sink, suggesting they are used for personal hygiene. The presence of a shower curtain and a bathtub further supports this inference, as these are common locations for bathroom products. Additionally, the bottles appear to be labeled with words that are typically associated with personal care products, such as "shampoo" and "conditioner".}
+
+{A}
+{'split': 'val', 'image_id': 547816, 'question_id': '3qnvp3XRGpc5L6RMhRZ3gg', 'question': 'The visible bottles most likely contain what kind of items?', 'choices': ['body wash', 'shampoo conditioner', 'lotions', 'mouthwash'], 'correct_choice_idx': 1, 'direct_answers': ['shampoo', 'soap', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner'], 'difficult_direct_answer': False, 'rationales': ['They are located within the shower.', 'They are in the shower.', 'They are bottles of stuff to wash your hair with and condition it.']}
+<END OF ERROR>
+<ERROR0> ANS NOT FOUND
+<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+<|image|>
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {A } or {B} or {C}or {D} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+Question: What is in the motorcyclist's mouth?
+Choices: 0. toothpick 1. food 2. popsicle stick 3. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {3}
+Question: Which number birthday is probably being celebrated?
+Choices: 0. one 1. ten 2. nine 3. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {3}
+Question: What best describes the pool of water?
+Choices: 0. frozen 1. fresh 2. dirty 3. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {2}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
+        BRYCE METAL
+ Now, here is the question you need to answer.
+    Question: What type of animal is on a leash on the sidewalk?
+Choices: 0. dog 1. tiger 2. cat 3. lion
+Rationale: {FILL IN Rationale} Answer: {FILL IN Answer}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+{The animal on the leash is a dog. The dog is walking on the sidewalk with its owner. The dog is a small breed, possibly a terrier or a poodle. The dog is wearing a collar and leash. The dog is looking up at its owner. The dog is walking next to a person. The dog is on a leash. The dog is a domesticated animal. The dog is a pet. The dog is a companion animal. The dog is a member of the family. The dog is a loyal animal. The dog is a friendly animal. The dog is a social animal. The dog is a trainable animal. The dog is a useful animal. The dog is a working animal. The dog is a service animal. The dog is a therapy animal. The dog is a emotional support animal. The dog is a comfort animal. The dog is a companion animal. The dog is a pet. The dog is a domesticated animal. The dog is a member of the
