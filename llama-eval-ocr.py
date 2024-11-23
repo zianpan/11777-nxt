@@ -76,7 +76,7 @@ with torch.no_grad():
     cnt = 0
     overall_confidence = []
     ind = 0
-    for i in trange(4,304):
+    for i in trange(4,104):
         ind += 1
         torch.cuda.empty_cache()
         meta_data_one_sample = val_aokvqa[i]
@@ -120,20 +120,20 @@ with torch.no_grad():
             del output
             del meta_data_one_sample,text_ans
             continue
-        # extracted_content = text_ans[-20:]
+        extracted_content = text_ans[-20:]
 
-        # logits = output.scores
-        # probabilities = [F.softmax(logit, dim=-1) for logit in logits]
-        # local_confi = []
-        # token_ids = output.sequences[0]
-        # for i in range(-len(probabilities),-1):
-        #     # print(i)
-        #     prob_pos = token_ids[i]
-        #     prob = probabilities[i]
-        #     local_confi.append(probabilities[i].tolist()[0][prob_pos])
+        logits = output.scores
+        probabilities = [F.softmax(logit, dim=-1) for logit in logits]
+        local_confi = []
+        token_ids = output.sequences[0]
+        for i in range(-len(probabilities),-1):
+            # print(i)
+            prob_pos = token_ids[i]
+            prob = probabilities[i]
+            local_confi.append(probabilities[i].tolist()[0][prob_pos])
 
-        # confi = np.mean(local_confi)
-        # overall_confidence.append(confi)
+        confi = np.mean(local_confi)
+        overall_confidence.append(confi)
 
         model_ans = -1
         for num in [0,1,2,3]:
@@ -166,8 +166,9 @@ with torch.no_grad():
         
         
         del output, text_ans, extracted_content,meta_data_one_sample
-        # del confi, probabilities, logits, token_ids,
+        del confi, probabilities, logits, token_ids,
 print('final accuracy', cnt/ind)  
+print('final confidence', np.mean(overall_confidence))
 
 # %%
 # TEST

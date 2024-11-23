@@ -26,3 +26,4 @@ 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
 
 pip install paddleocr
 pip install paddlepaddle-gpu
+pip install nltk

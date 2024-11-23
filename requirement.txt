@@ -9,3 +9,5 @@ regex
 tqdm
 git+https://github.com/openai/CLIP.git
 datasets
+wikipedia-api
+sentence-transformers
