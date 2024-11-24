@@ -38,6 +38,37 @@ class Llama32:
             add_special_tokens=False,
             return_tensors="pt"
         ).to(self.model.device)
+        # from PIL import Image
+
+        # # Assume `img_paths` is a list of image paths
+        # img_paths = ["path_to_image1.jpg", "path_to_image2.jpg"]
+        # images = [Image.open(img_path) for img_path in img_paths]  # Load all images
+
+        # # Create a dynamic prompt with placeholders for multiple images
+        # image_placeholders = [f"<image{i+1}>" for i in range(len(images))]
+        # prompt_with_images = " ".join(image_placeholders) + " " + prompt
+
+        # # Create the messages structure with the text and placeholders
+        # messages = [
+        #     {"role": "user", "content": [
+        #         {"type": "image"},
+        #         {"type": "text", "text": prompt_with_images}
+        #     ]}
+        # ]
+
+        # # Generate input text using the processor's chat template
+        # input_text = self.processor.apply_chat_template(messages, add_generation_prompt=True)
+
+        # # Preprocess the images and the text
+        # inputs = self.processor(
+        #     images,  # Pass the list of images
+        #     input_text,
+        #     add_special_tokens=False,
+        #     return_tensors="pt"
+        # ).to(self.model.device)
+
+# Now `inputs` can be fed to your model
+
         for k, v in extra_config.items():
             inputs[k] = v
         
@@ -89,7 +120,7 @@ if __name__ == "__main__":
     )
     processor = AutoProcessor.from_pretrained(model_id)
 
-    print(model.device)
+    # print(model.device)
 
 
     total_num = 300

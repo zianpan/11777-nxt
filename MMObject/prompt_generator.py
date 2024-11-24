@@ -36,7 +36,7 @@ class PromptGeneratorABCD(PromptGenerator):
         return prompt
 
     def generate_question(self,question, choices):
-        prompt = f"Question: {question}\nChoices: {self.choices_map[0]}. {choices[0]} {self.choices_map[1]}. {choices[1]} {self.choices_map[2]}. {choices[2]} {self.choices_map[3]}. {choices[3]}\nRationale: {{FILL IN Rationale}} Answer: {{FILL IN Answer}}"
+        prompt = f"Question: {question}\nChoices: {self.choices_map[0]}. {choices[0]} {self.choices_map[1]}. {choices[1]} {self.choices_map[2]}. {choices[2]} {self.choices_map[3]}. {choices[3]}\n"
         return prompt
     
     def generate_template(self,examples: list):

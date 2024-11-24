@@ -13,9 +13,9 @@ from transformers import MllamaForConditionalGeneration, AutoProcessor
 import os
 import glob
 from tqdm import trange
-from llama import Llama32
-from utls import *
-from prompt_generator import *
+from classes.llama import Llama32
+from classes.utls import *
+from classes.prompt_generator import *
 import torch.nn.functional as F
 
 # %%

@@ -13,9 +13,9 @@ from transformers import MllamaForConditionalGeneration, AutoProcessor
 import os
 import glob
 from tqdm import trange
-from llama import Llama32
-from utls import *
-from prompt_generator import *
+from MMObject.llama import Llama32
+from MMObject.utls import *
+from MMObject.prompt_generator import *
 import torch.nn.functional as F
 
 # %%
@@ -58,6 +58,26 @@ prompt_template = pg0123.generate_template(val_aokvqa[:3])
 # %%
 prompt_template = pg0123.generate_template(val_aokvqa[:3])
 
+prompt_template = """
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output 0 or 1 or 2 or 3 as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+Question: What is in the motorcyclist's mouth?
+Choices: 0. toothpick 1. food 2. popsicle stick 3. cigarette
+Rationale: Looking at the picture, we can see a man with white shirt riding a motorcycle. Now as we find the motorcyclist in the question, we can see that he has a cigarette in his mouth.
+
+Question: Which number birthday is probably being celebrated?
+Choices: 0. one 1. ten 2. nine 3. thirty
+Rationale: From the question, we know that someone is celebrating for the birthday. Looking at the picture, we can see two things on the table top. One is a grey bear which is likely to be a cake, the other is a cake with several candles on it. By looking at the purple cake, we can see it writes number thirty on it.
+
+Question: What best describes the pool of water?
+Choices: 0. frozen 1. fresh 2. dirty 3. boiling
+Rationale: Looking at the picture, we can see a tree in the middle. Behind the tree, we can see several giraffes. On the bottom of the picture, we can see a pool of water. This refers to the pool mentioned in the question. The pool is dark brown and it is brown and surrounded with mud. So the pool is dirty.
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+"""
+
 # %%
 print(prompt_template)
 
@@ -76,7 +96,7 @@ with torch.no_grad():
     cnt = 0
     overall_confidence = []
     ind = 0
-    for i in trange(4,104):
+    for i in trange(4,304):
         ind += 1
         torch.cuda.empty_cache()
         meta_data_one_sample = val_aokvqa[i]
@@ -92,12 +112,11 @@ with torch.no_grad():
         choices = meta_data_one_sample["choices"]
         mcToAsk = pg0123.generate_question(question, choices)
         OCR_prompt = f"""Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
-        {ocr_res_text}\n Now, here is the question you need to answer.
+       \n OCR result: {ocr_res_text}\n Now, here is the question you need to answer.
     """
         # local_prompt_template = prompt_template + mcToAsk
-        local_prompt_template = prompt_template + OCR_prompt+mcToAsk
-
-        
+        final_text = "Now Please answer the following question based on the image and the OCR result. You should first output Rational and then the answer.\n Now, please output the rational step by step.\n Rational:"
+        local_prompt_template = prompt_template + OCR_prompt+mcToAsk + final_text
 
         # output = model.predict_one(img_path,local_prompt_template,
         #                         extra_config = {"max_new_tokens":200, 
@@ -109,31 +128,47 @@ with torch.no_grad():
                                 extra_config = {"max_new_tokens":200})
         text_ans = model.processor.decode(output[0])
 
+
         
         try:
-            extracted_content = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*?)<\|eot_id\|>", text_ans, re.DOTALL).group(1).strip()
+            extracted_content1 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans, re.DOTALL).group(1).strip()
+
+            output = model.predict_one(img_path,local_prompt_template + extracted_content1 + "\n Now, please output the answer using 0 or 1 or 2 or 3.",
+                                    extra_config = {"max_new_tokens":200})
+            
+            text_ans2 = model.processor.decode(output[0])
+            extracted_content2 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans2, re.DOTALL).group(1).strip()
+
+            # print(text_ans)
+
+
         except:
-            print("<ERROR0> ANS NOT FOUND")
+            print("<ERROR0> Extract Ans Failed")
             print(text_ans)
             print(meta_data_one_sample)
             print("<END OF ERROR>")
             del output
             del meta_data_one_sample,text_ans
             continue
-        extracted_content = text_ans[-20:]
 
-        logits = output.scores
-        probabilities = [F.softmax(logit, dim=-1) for logit in logits]
-        local_confi = []
-        token_ids = output.sequences[0]
-        for i in range(-len(probabilities),-1):
-            # print(i)
-            prob_pos = token_ids[i]
-            prob = probabilities[i]
-            local_confi.append(probabilities[i].tolist()[0][prob_pos])
 
-        confi = np.mean(local_confi)
-        overall_confidence.append(confi)
+
+        extracted_content = extracted_content2
+
+        # logits = output.scores
+
+        # probabilities = [F.softmax(logit, dim=-1) for logit in logits]
+        # local_confi = []
+        # token_ids = output.sequences[0]
+        # for i in range(-len(probabilities),-1):
+        #     # print(i)
+        #     prob_pos = token_ids[i]
+        #     prob = probabilities[i]
+        #     local_confi.append(probabilities[i].tolist()[0][prob_pos])
+
+        # confi = np.mean(local_confi)
+        # overall_confidence.append(confi)
+        # del confi, probabilities, logits, token_ids,
 
         model_ans = -1
         for num in [0,1,2,3]:
@@ -143,7 +178,7 @@ with torch.no_grad():
 
         if model_ans == -1:
             print("<ERROR1> ANS NOT FOUND")
-            print(extracted_content)
+            print(text_ans2)
             print(meta_data_one_sample)
             print("<END OF ERROR>")
             del output
@@ -154,7 +189,7 @@ with torch.no_grad():
             cnt += 1
         else:
             print("<ERROR2> INCORRECT ANS")
-            print(extracted_content)
+            print(text_ans2)
             print(meta_data_one_sample)
             print("TRUE ANS: ", base_ans)
             print("MODEL ANS: ", model_ans)
@@ -166,9 +201,9 @@ with torch.no_grad():
         
         
         del output, text_ans, extracted_content,meta_data_one_sample
-        del confi, probabilities, logits, token_ids,
+        
 print('final accuracy', cnt/ind)  
-print('final confidence', np.mean(overall_confidence))
+# print('final confidence', np.mean(overall_confidence))
 
 # %%
 # TEST

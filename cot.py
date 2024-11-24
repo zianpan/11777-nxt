@@ -1,6 +1,6 @@
 from PIL import Image
 import matplotlib.pyplot as plt
-from llama import Llama32
+from classes.llama import Llama32
 import torch
 import numpy as np
 import pandas as pd
@@ -13,7 +13,7 @@ import os
 import glob
 from tqdm import trange
 import re
-from utls import *
+from classes.utls import *
 
 class PromptGenerator:
 
