@@ -15,7 +15,9 @@ from tqdm import trange
 import re
 
 
-def prepare_dataset():
+def prepare_dataset(split):
+    assert split in ["val", "test", "train"]
+
     path = "/home/ubuntu/data/aokvqa/"
     all_files = glob.glob(os.path.join(path, "*.json"))
 
@@ -30,10 +32,10 @@ def prepare_dataset():
     path = "/home/ubuntu/data/coco/annotations"
     all_files = glob.glob(os.path.join(path, "*.json"))
 
-    with open("/home/ubuntu/data/coco/annotations/captions_val2017.json", 'r') as f:
+    with open(f"/home/ubuntu/data/coco/annotations/captions_{split}2017.json", 'r') as f:
         coco_val_caption = json.load(f)
 
-    with open("/home/ubuntu/data/coco/annotations/instances_val2017.json", 'r') as f:
+    with open(f"/home/ubuntu/data/coco/annotations/instances_{split}2017.json", 'r') as f:
         coco_val_instance = json.load(f)
 
     coco_id_filename = {}

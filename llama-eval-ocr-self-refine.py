@@ -43,7 +43,7 @@ Now, it's your turn. Again, remember to put your answer in curly braces. Here is
 
 split = "val"
 print(f"Loading {split} dataset")
-eval_num = 100
+eval_num = 300
 # %%
 val_aokvqa, coco_val_caption, coco_id_filename = prepare_dataset(split=split)
 
@@ -60,7 +60,7 @@ prompt_template = pg0123.generate_template(val_aokvqa[:3])
 prompt_template = pg0123.generate_template(val_aokvqa[:3])
 
 prompt_template = """
-You task is to select one of the four following options based on the image and the question. Specifically, you need to output 0 or 1 or 2 or 3 as well as rationales of why you chose that option.
+You task is to select one of the four following options based on the image and the question. Specifically, you should focus on output rationales first.
 The rationales should also include in curly braces the answer to the question.
 
 Here are some examples that you can follow:
@@ -76,7 +76,6 @@ Question: What best describes the pool of water?
 Choices: 0. frozen 1. fresh 2. dirty 3. boiling
 Rationale: Looking at the picture, we can see a tree in the middle. Behind the tree, we can see several giraffes. On the bottom of the picture, we can see a pool of water. This refers to the pool mentioned in the question. The pool is dark brown and it is brown and surrounded with mud. So the pool is dirty.
 
-Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
 """
 
 # %%
@@ -113,48 +112,91 @@ with torch.no_grad():
         choices = meta_data_one_sample["choices"]
         mcToAsk = pg0123.generate_question(question, choices)
         OCR_prompt = f"""Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
-       \n OCR result: {ocr_res_text}\n Now, here is the question you need to answer.
+       \n OCR result: <{ocr_res_text}>\n 
+        Here is the question and choices you have.
     """
         # local_prompt_template = prompt_template + mcToAsk
-        final_text = "Now Please answer the following question based on the image and the OCR result. You should first output Rational and then the answer.\n Now, please output the rational step by step.\n Rational:"
-        local_prompt_template = prompt_template + OCR_prompt+mcToAsk + final_text
+        final_text = """You should output Rationals step by step based on the image and the OCR result."""
+        
 
         # output = model.predict_one(img_path,local_prompt_template,
         #                         extra_config = {"max_new_tokens":200, 
         #                             "output_scores":True,
         #                             "return_dict_in_generate":True})
         # text_ans = model.processor.decode(output.sequences[0])
+        def extract_response(full_response):
+            extracted_content = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", full_response, re.DOTALL).group(1).strip()
+            return extracted_content
+        
+        output = model.predict_one(img_path,mcToAsk + "\n Can you give me the descriptions of the main subject in the question and the four choices?",
+                                    extra_config = {"max_new_tokens":200})
+        choices_def = model.processor.decode(output[0])
+        del output
+        choices_def = extract_response(choices_def)
 
-        output = model.predict_one(img_path,local_prompt_template,
-                                extra_config = {"max_new_tokens":200, "temperature":0.5})
+        local_prompt_template = prompt_template + OCR_prompt+mcToAsk + "This is the description of the four choices: "+ choices_def + final_text
+
+        
+        text_ans = None
+
+        for i in range(2):
+            local_prompt_template += "Now please output the rationale.\n Rationale:"
+            output = model.predict_one(img_path,local_prompt_template,
+                                    extra_config = {"max_new_tokens":200})
+            text_ans = model.processor.decode(output[0])
+            text_ans = re.sub(r'<\|.*\|>', '', text_ans)
+
+            local_prompt_template = text_ans + "\n This is the previous response. Is it possible that other choices might be the correct? Provide feedback based on it \n Feedback:"
+            del output, text_ans
+            output = model.predict_one(img_path,local_prompt_template,
+                                    extra_config = {"max_new_tokens":200})
+            text_ans = model.processor.decode(output[0])
+            text_ans = re.sub(r'<\|.*\|>', '', text_ans)
+            
+            local_prompt_template = text_ans + "\n This is previous response. Can you give me a refined version of the rationale? \n Refined Rationale:"
+            del output, text_ans
+            output = model.predict_one(img_path,local_prompt_template,
+                                    extra_config = {"max_new_tokens":200})
+            text_ans = model.processor.decode(output[0])
+            text_ans = re.sub(r'<\|.*\|>', '', text_ans)
+        
+        final_prompt = text_ans + f"\n Now, this is the question again \n {mcToAsk}\n Please output the answer using 0 or 1 or 2 or 3."
+
+        output = model.predict_one(img_path,final_prompt,
+                                    extra_config = {"max_new_tokens":200})
         text_ans = model.processor.decode(output[0])
+        extracted_content = extract_response(text_ans)
+            
+            # self-refine
 
 
         
-        try:
-            extracted_content1 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans, re.DOTALL).group(1).strip()
 
-            output = model.predict_one(img_path,local_prompt_template + extracted_content1 + "\n Now, please output the answer using 0 or 1 or 2 or 3.",
-                                    extra_config = {"max_new_tokens":200})
+        
+        # try:
+        #     extracted_content1 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans, re.DOTALL).group(1).strip()
+
+        #     output = model.predict_one(img_path,local_prompt_template + extracted_content1 + "\n Now, please output the answer using 0 or 1 or 2 or 3.",
+        #                             extra_config = {"max_new_tokens":200})
             
-            text_ans2 = model.processor.decode(output[0])
-            extracted_content2 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans2, re.DOTALL).group(1).strip()
+        #     text_ans2 = model.processor.decode(output[0])
+        #     extracted_content2 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans2, re.DOTALL).group(1).strip()
 
             # print(text_ans)
 
 
-        except:
-            print("<ERROR0> Extract Ans Failed")
-            print(text_ans)
-            print(meta_data_one_sample)
-            print("<END OF ERROR>")
-            del output
-            del meta_data_one_sample,text_ans
-            continue
+        # except:
+        #     print("<ERROR0> Extract Ans Failed")
+        #     print(text_ans)
+        #     print(meta_data_one_sample)
+        #     print("<END OF ERROR>")
+        #     del output
+        #     del meta_data_one_sample,text_ans
+        #     continue
 
 
 
-        extracted_content = extracted_content2
+        
 
         # logits = output.scores
 
@@ -179,7 +221,7 @@ with torch.no_grad():
 
         if model_ans == -1:
             print("<ERROR1> ANS NOT FOUND")
-            print(text_ans2)
+            print(text_ans)
             print(meta_data_one_sample)
             print("<END OF ERROR>")
             del output
@@ -190,7 +232,7 @@ with torch.no_grad():
             cnt += 1
         else:
             print("<ERROR2> INCORRECT ANS")
-            print(text_ans2)
+            print(text_ans)
             print(meta_data_one_sample)
             print("TRUE ANS: ", base_ans)
             print("MODEL ANS: ", model_ans)
