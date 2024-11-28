@@ -22,28 +22,33 @@ def prepare_dataset(split):
     all_files = glob.glob(os.path.join(path, "*.json"))
 
     # read all files into a list
-    data = []
-    for filename in all_files:
-        with open(filename, 'r') as f:
-            data.append(json.load(f))
+    # data = []
+    # for filename in all_files:
+    #     print(filename)
+    #     with open(filename, 'r') as f:
+    #         data.append(json.load(f))
+    aokvqa_split = f"/home/ubuntu/data/aokvqa/aokvqa_v1p0_{split}.json"
+    
+    with open(aokvqa_split, 'r') as f:
+        val_aokvqa = json.load(f)
 
-    val_aokvqa = data[2]
+    # val_aokvqa = data[2]
 
     path = "/home/ubuntu/data/coco/annotations"
     all_files = glob.glob(os.path.join(path, "*.json"))
 
-    with open(f"/home/ubuntu/data/coco/annotations/captions_{split}2017.json", 'r') as f:
-        coco_val_caption = json.load(f)
+    # with open(f"/home/ubuntu/data/coco/annotations/captions_{split}2017.json", 'r') as f:
+    #     coco_val_caption = json.load(f)
 
-    with open(f"/home/ubuntu/data/coco/annotations/instances_{split}2017.json", 'r') as f:
-        coco_val_instance = json.load(f)
+    # with open(f"/home/ubuntu/data/coco/annotations/instances_{split}2017.json", 'r') as f:
+    #     coco_val_instance = json.load(f)
 
-    coco_id_filename = {}
+    # coco_id_filename = {}
 
-    for d in coco_val_instance['images']:
-        coco_id_filename[d['id']] = d['file_name']
+    # for d in coco_val_instance['images']:
+    #     coco_id_filename[d['id']] = d['file_name']
     
-    return val_aokvqa, coco_val_caption, coco_id_filename
+    return val_aokvqa
 
 def compare_ans(output, base_ans) -> bool:
     cleaned_text = re.sub(r"<.*>", "", output)

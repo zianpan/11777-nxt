@@ -12,15 +12,25 @@ from tqdm import trange
 
 
 class Llama32:
-    def __init__(self) -> None:
-        model_id = "meta-llama/Llama-3.2-11B-Vision-Instruct"
-
-        self.model = MllamaForConditionalGeneration.from_pretrained(
-            model_id,
-            torch_dtype=torch.bfloat16,
-            device_map="cuda:0",
-        )
-        self.processor = AutoProcessor.from_pretrained(model_id)
+    def __init__(self,model_id = "meta-llama/Llama-3.2-11B-Vision-Instruct", customized_func = None) -> None:
+        """
+        customized_func: if not None then [processor_func, model_func]
+        
+        """
+        if model_id == "meta-llama/Llama-3.2-11B-Vision-Instruct":
+            
+            self.model = MllamaForConditionalGeneration.from_pretrained(
+                model_id,
+                torch_dtype=torch.bfloat16,
+                device_map="cuda:0",
+            )
+            self.processor = AutoProcessor.from_pretrained(model_id)
+        else:
+            if customized_func is None:
+                raise ValueError("Please provide a customized function for the model")
+            else:
+                self.model = customized_func[0](model_id)
+                self.processor = customized_func[1](model_id)
     
     def predict_one(self,img_path,prompt, extra_config):
         image = Image.open(img_path)
