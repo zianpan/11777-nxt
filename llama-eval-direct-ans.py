@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
 
             output = model.predict_one(img_path,local_prompt_template,
-                                    extra_config = {"max_new_tokens":200})
+                                    extra_config = {"max_new_tokens":200, "temperature":0.5, "min_p" : 0.2})
             
             text_ans = model.processor.decode(output[0])
 
@@ -80,7 +80,7 @@ if __name__ == "__main__":
           
             torch.cuda.empty_cache()
 
-        with open("/home/ubuntu/project/11777-nxt/logs/dict_logs/llama_direct_ans_full.json", "w") as f:
+        with open("/home/ubuntu/project/11777-nxt/logs/dict_logs/llama_direct_ans_full_t0.5.json", "w") as f:
             json.dump(error_logs, f)
 
 
