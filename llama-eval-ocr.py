@@ -45,7 +45,7 @@ split = "val"
 print(f"Loading {split} dataset")
 eval_num = 100
 # %%
-val_aokvqa, coco_val_caption, coco_id_filename = prepare_dataset(split=split)
+val_aokvqa = prepare_dataset(split=split)
 
 # %%
 # open this json file  /home/ubuntu/data/aokvqa/ocr_res_val.json
@@ -80,7 +80,7 @@ Now, it's your turn. Again, remember to put your answer in curly braces. Here is
 """
 
 # %%
-print(prompt_template)
+# print(prompt_template)
 
 
 # %%
@@ -91,29 +91,30 @@ print(prompt_template)
 
 # img_path = "/home/ubuntu/project/11777-nxt/002877-R1-008-2A.jpg"
 
-
+error_logs = {"final_accu":"None", "error_logs":{}}
 # %%
 with torch.no_grad():
     cnt = 0
     overall_confidence = []
     ind = 0
-    for i in trange(4,4+eval_num):
+    for i in trange(4,len(val_aokvqa)):
         ind += 1
         torch.cuda.empty_cache()
         meta_data_one_sample = val_aokvqa[i]
-        base_path = "/home/ubuntu/data/coco/val2017/"
+        split = meta_data_one_sample['split']
+        base_path = f"/home/ubuntu/data/coco/{split}2017/"
         img_id = meta_data_one_sample["image_id"]
-        img_file = coco_id_filename[img_id]
-        ocr_res_text = ocr_res[str(img_id)]
+        img_file = str(img_id).zfill(12) + ".jpg"
         img_path = base_path + img_file  
         base_ans = meta_data_one_sample["correct_choice_idx"]
         rationale =  meta_data_one_sample['rationales']
         direct_ans = meta_data_one_sample['direct_answers']
+        ocr_res_text = ocr_res[str(img_id)]
         question = meta_data_one_sample["question"]
         choices = meta_data_one_sample["choices"]
         mcToAsk = pg0123.generate_question(question, choices)
         OCR_prompt = f"""Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
-       \n OCR result: {ocr_res_text}\n Now, here is the question you need to answer.
+       \n OCR result: {ocr_res_text}.
     """
         # local_prompt_template = prompt_template + mcToAsk
         final_text = "Now Please answer the following question based on the image and the OCR result. You should first output Rational and then the answer.\n Now, please output the rational step by step.\n Rational:"
@@ -144,17 +145,21 @@ with torch.no_grad():
 
 
         except:
-            print("<ERROR0> Extract Ans Failed")
-            print(text_ans)
-            print(meta_data_one_sample)
-            print("<END OF ERROR>")
+            error_logs["error_logs"][i] = {"error":"<ERROR0> Extract Ans Failed", "language_output": text_ans, "sample": meta_data_one_sample}
+
             del output
             del meta_data_one_sample,text_ans
             continue
 
 
 
-        extracted_content = extracted_content2
+        isCorrect, error_log = compare_ans(meta_data_one_sample, text_ans2)
+        if not isCorrect:
+            error_logs["error_logs"][i] = error_log
+            del output
+        else:
+            del output
+            cnt += 1
 
         # logits = output.scores
 
@@ -170,41 +175,15 @@ with torch.no_grad():
         # confi = np.mean(local_confi)
         # overall_confidence.append(confi)
         # del confi, probabilities, logits, token_ids,
-
-        model_ans = -1
-        for num in [0,1,2,3]:
-            if str(num) in extracted_content:
-                model_ans = num
-                break
-
-        if model_ans == -1:
-            print("<ERROR1> ANS NOT FOUND")
-            print(text_ans2)
-            print(meta_data_one_sample)
-            print("<END OF ERROR>")
-            del output
-            continue
-
         
-        if model_ans == int(base_ans):
-            cnt += 1
-        else:
-            print("<ERROR2> INCORRECT ANS")
-            print(text_ans2)
-            print(meta_data_one_sample)
-            print("TRUE ANS: ", base_ans)
-            print("MODEL ANS: ", model_ans)
-            print("<END OF ERROR>")
-
-
-        if i % 20 == 0:
-            print('current accuracy: ', cnt/ind)
-        
-        
-        del output, text_ans, extracted_content,meta_data_one_sample
-        
-print('final accuracy', cnt/ind)  
+# print('final accuracy', cnt/ind)  
+error_logs["final_accu"] = cnt/ind
 # print('final confidence', np.mean(overall_confidence))
+
+with open("/home/ubuntu/project/11777-nxt/logs/dict_logs/llama_rationale_ocr.json", "w") as f:
+    json.dump(error_logs, f)
+
+print(cnt/ind)
 
 # %%
 # TEST

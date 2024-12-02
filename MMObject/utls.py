@@ -113,3 +113,29 @@ def demonstrate_example(val_di):
     print(f"Rationale: {rationale}")
 
 
+def compare_ans(sample, langauge_output, last_num_string = 20):
+        
+        ans_content = langauge_output[-last_num_string:]
+        base_ans = sample["correct_choice_idx"]
+
+        model_ans = -1
+        res = {"ERROR_TYPE": "NONE",
+               "ERROR_MSG": "NONE"}
+        
+        for num in [0,1,2,3]:
+            if str(num) in ans_content:
+                model_ans = num
+
+        if model_ans == -1:
+            res["ERROR_TYPE"] = "<ERROR1> ANS NOT FOUND"
+            res["ERROR_MSG"] = {"extracted_ans": ans_content, "language_output": langauge_output, "sample": sample}            
+
+        
+        if model_ans == int(base_ans):
+            return True, res
+        else:
+            res["ERROR_TYPE"] = "<ERROR2> INCORRECT ANS"
+            res["ERROR_MSG"] = {"extracted_ans": ans_content, "language_output": langauge_output, "sample": sample, "true_ans": base_ans, "model_ans": model_ans}            
+            return False, res
+
+
