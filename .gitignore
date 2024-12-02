@@ -1,2 +1,8 @@
 .vscode/
 .DS_Store
+unsloth_compiled_cache/
+LLaMA-Factory/
+outputs/
+lora_model/
+llama32-V-CoT-Tuned/
+MMObject.egg-info/

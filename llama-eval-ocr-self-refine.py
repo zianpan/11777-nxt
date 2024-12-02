@@ -113,8 +113,8 @@ with torch.no_grad():
         mcToAsk = pg0123.generate_question(question, choices)
         OCR_prompt = f"""Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
        \n OCR result: <{ocr_res_text}>\n 
-        Here is the question and choices you have.
-    """
+        Here is the question and choices you have."""
+
         # local_prompt_template = prompt_template + mcToAsk
         final_text = """You should output Rationals step by step based on the image and the OCR result."""
         
@@ -134,9 +134,8 @@ with torch.no_grad():
         del output
         choices_def = extract_response(choices_def)
 
-        local_prompt_template = prompt_template + OCR_prompt+mcToAsk + "This is the description of the four choices: "+ choices_def + final_text
+        local_prompt_template = prompt_template + OCR_prompt + mcToAsk + "This is the description of the four choices: "+ choices_def + final_text
 
-        
         text_ans = None
 
         for i in range(2):

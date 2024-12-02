@@ -1,0 +1,20 @@
+Loading val dataset
+
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output 0 or 1 or 2 or 3 as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+Question: What is in the motorcyclist's mouth?
+Choices: 0. toothpick 1. food 2. popsicle stick 3. cigarette
+Rationale: Looking at the picture, we can see a man with white shirt riding a motorcycle. Now as we find the motorcyclist in the question, we can see that he has a cigarette in his mouth.
+
+Question: Which number birthday is probably being celebrated?
+Choices: 0. one 1. ten 2. nine 3. thirty
+Rationale: From the question, we know that someone is celebrating for the birthday. Looking at the picture, we can see two things on the table top. One is a grey bear which is likely to be a cake, the other is a cake with several candles on it. By looking at the purple cake, we can see it writes number thirty on it.
+
+Question: What best describes the pool of water?
+Choices: 0. frozen 1. fresh 2. dirty 3. boiling
+Rationale: Looking at the picture, we can see a tree in the middle. Behind the tree, we can see several giraffes. On the bottom of the picture, we can see a pool of water. This refers to the pool mentioned in the question. The pool is dark brown and it is brown and surrounded with mud. So the pool is dirty.
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+

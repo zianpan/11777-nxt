@@ -55,7 +55,7 @@ split = "val"
 print(f"Loading {split} dataset")
 eval_num = 2
 # %%
-val_aokvqa, coco_val_caption, coco_id_filename = prepare_dataset(split=split)
+val_aokvqa = prepare_dataset(split=split)
 
 # %%
 # open this json file  /home/ubuntu/data/aokvqa/ocr_res_val.json
@@ -113,7 +113,7 @@ with torch.no_grad():
         meta_data_one_sample = val_aokvqa[i]
         base_path = "/home/ubuntu/data/coco/val2017/"
         img_id = meta_data_one_sample["image_id"]
-        img_file = coco_id_filename[img_id]
+        img_file = f"{str(img_id).zfill(12)}.jpg"
         ocr_res_text = ocr_res[str(img_id)]
         img_path = base_path + img_file  
         base_ans = meta_data_one_sample["correct_choice_idx"]
@@ -136,38 +136,38 @@ with torch.no_grad():
         # text_ans = model.processor.decode(output.sequences[0])
 
         output = model.predict_one(img_path,local_prompt_template,
-                                extra_config = {"max_new_tokens":200, "temperature":0.5})
+                                extra_config = {"max_new_tokens":200})
         text_ans = model.processor.decode(output[0])
 
 
         
-        try:
-            extracted_content1 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans, re.DOTALL).group(1).strip()
+        # try:
+        #     extracted_content1 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans, re.DOTALL).group(1).strip()
 
-            output = model.predict_one(img_path,local_prompt_template + extracted_content1 + "\n Now, please output the answer using 0 or 1 or 2 or 3.",
-                                    extra_config = {"max_new_tokens":200})
+        #     output = model.predict_one(img_path,local_prompt_template + extracted_content1 + "\n Now, please output the answer using 0 or 1 or 2 or 3.",
+        #                             extra_config = {"max_new_tokens":200})
             
-            text_ans2 = model.processor.decode(output[0])
-            extracted_content2 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans2, re.DOTALL).group(1).strip()
+        #     text_ans2 = model.processor.decode(output[0])
+        #     extracted_content2 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans2, re.DOTALL).group(1).strip()
 
-            # print(text_ans)
-
-
-        except:
-            print("<ERROR0> Extract Ans Failed")
-            print(text_ans)
-            print(meta_data_one_sample)
-            print("<END OF ERROR>")
-            del output
-            del meta_data_one_sample,text_ans
-            continue
+        #     # print(text_ans)
 
 
+        # except:
+        #     print("<ERROR0> Extract Ans Failed")
+        #     print(text_ans)
+        #     print(meta_data_one_sample)
+        #     print("<END OF ERROR>")
+        #     del output
+        #     del meta_data_one_sample,text_ans
+        #     continue
 
-        extracted_content = extracted_content2
 
-        print("<OUTPUT>")
-        print(text_ans2)
+
+        # extracted_content = extracted_content2
+
+        # print("<OUTPUT>")
+        print(text_ans)
         
 
         # logits = output.scores
@@ -185,37 +185,38 @@ with torch.no_grad():
         # overall_confidence.append(confi)
         # del confi, probabilities, logits, token_ids,
 
-        model_ans = -1
-        for num in [0,1,2,3]:
-            if str(num) in extracted_content:
-                model_ans = num
-                break
+        # model_ans = -1
+        # for num in [0,1,2,3]:
+        #     if str(num) in extracted_content:
+        #         model_ans = num
+        #         break
 
-        if model_ans == -1:
-            print("<ERROR1> ANS NOT FOUND")
-            print(text_ans2)
-            print(meta_data_one_sample)
-            print("<END OF ERROR>")
-            del output
-            continue
+        # if model_ans == -1:
+        #     print("<ERROR1> ANS NOT FOUND")
+        #     print(text_ans)
+        #     print(meta_data_one_sample)
+        #     print("<END OF ERROR>")
+        #     del output
+        #     continue
 
         
-        if model_ans == int(base_ans):
-            cnt += 1
-        else:
-            print("<ERROR2> INCORRECT ANS")
-            print(text_ans2)
-            print(meta_data_one_sample)
-            print("TRUE ANS: ", base_ans)
-            print("MODEL ANS: ", model_ans)
-            print("<END OF ERROR>")
+        # if model_ans == int(base_ans):
+        #     cnt += 1
+        # else:
+        #     print("<ERROR2> INCORRECT ANS")
+        #     # print(text_ans2)
+        #     print(meta_data_one_sample)
+        #     print("TRUE ANS: ", base_ans)
+        #     print("MODEL ANS: ", model_ans)
+        #     print("<END OF ERROR>")
 
 
         if i % 20 == 0:
             print('current accuracy: ', cnt/ind)
         
         
-        del output, text_ans, extracted_content,meta_data_one_sample
+        del output, text_ans,meta_data_one_sample
+        # extracted_content
         
 print('final accuracy', cnt/ind)  
 # print('final confidence', np.mean(overall_confidence))
