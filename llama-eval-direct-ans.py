@@ -38,6 +38,15 @@ if __name__ == "__main__":
 
     # %%
     val_aokvqa = prepare_dataset(split = "val")
+    import json
+    with open("logs/dict_logs/llama_direct_ans_full_t0.5_force_ans.json", "r") as f:
+        data = json.load(f)
+
+    m = []
+    for k in data['error_logs'].keys():
+        m.append(val_aokvqa[int(k)])
+
+    val_aokvqa = m
 
     # %%
     pg0123 = PromptGenerator0123(prompt_template = prompt_template)
@@ -51,37 +60,56 @@ if __name__ == "__main__":
         ind = 1
         for i in trange(len(val_aokvqa)):
             meta_data_one_sample = val_aokvqa[i]
-            split = meta_data_one_sample['split']
-            base_path = f"/home/ubuntu/data/coco/{split}2017/"
-            img_id = meta_data_one_sample["image_id"]
-            img_file = str(img_id).zfill(12) + ".jpg"
-            img_path = base_path + img_file  
-            base_ans = meta_data_one_sample["correct_choice_idx"]
-            rationale =  meta_data_one_sample['rationales']
-            direct_ans = meta_data_one_sample['direct_answers']
+            def eval_one(meta_data_one_sample):
+                split = meta_data_one_sample['split']
+                base_path = f"/home/ubuntu/data/coco/{split}2017/"
+                img_id = meta_data_one_sample["image_id"]
+                img_file = str(img_id).zfill(12) + ".jpg"
+                img_path = base_path + img_file  
+                base_ans = meta_data_one_sample["correct_choice_idx"]
+                rationale =  meta_data_one_sample['rationales']
+                direct_ans = meta_data_one_sample['direct_answers']
 
-            question = meta_data_one_sample["question"]
-            choices = meta_data_one_sample["choices"]
-            mcToAsk = pg0123.generate_question(question, choices)
+                question = meta_data_one_sample["question"]
+                choices = meta_data_one_sample["choices"]
+                mcToAsk = pg0123.generate_question(question, choices)
 
-            local_prompt_template = mcToAsk.strip() + "\n Now please output the answer using 0 or 1 or 2 or 3. \n Answer: "
+                local_prompt_template = mcToAsk.strip() + "\n Now please output the answer using 0 or 1 or 2 or 3. \n Answer: "
 
 
-            output = model.predict_one(img_path,local_prompt_template,
-                                    extra_config = {"max_new_tokens":200, "temperature":0.5, "min_p" : 0.2})
+                output = model.predict_one(img_path,local_prompt_template,
+                                        extra_config = {"max_new_tokens":200, "temperature":0.5, "min_p" : 0.2})
+                
+                text_ans = model.processor.decode(output[0])
+
+                isCorrect, error_log = compare_ans(meta_data_one_sample, text_ans, last_num_string = 30)
+                return isCorrect, error_log
             
-            text_ans = model.processor.decode(output[0])
+            
+            isCorrect, error_log = eval_one(meta_data_one_sample)
+            
+            if not isCorrect:
+                # print(error_log)
+                if error_log['ERROR_MSG']['model_ans'] == -1:
+                    for i in range(5):
+                        isCorrect, error_log2 = eval_one(meta_data_one_sample)
+                        if not isCorrect:
+                            if error_log2['ERROR_MSG']['model_ans'] != -1:
+                                break
 
-            isCorrect, error_log = compare_ans(meta_data_one_sample, text_ans, last_num_string = 30)
             if isCorrect:
                 cnt += 1
             else:
                 error_logs["error_logs"][i] = error_log
+        
           
             torch.cuda.empty_cache()
+        error_logs['final_accuracy'] = cnt / len(val_aokvqa)
 
-        with open("/home/ubuntu/project/11777-nxt/logs/dict_logs/llama_direct_ans_full_t0.5.json", "w") as f:
+        with open("/home/ubuntu/project/11777-nxt/logs/dict_logs/llama_direct_ans_full_re_ans_161.json", "w") as f:
             json.dump(error_logs, f)
+    
+
 
 
 
