@@ -37,16 +37,17 @@ if __name__ == "__main__":
     """
 
     # %%
-    val_aokvqa = prepare_dataset(split = "val")
+    # val_aokvqa = prepare_dataset(split = "val")
+    val_aokvqa = load_dataset_path("new_dataset/difficult_direct_answer_70.json")
     import json
-    with open("logs/dict_logs/llama_direct_ans_full_t0.5_force_ans.json", "r") as f:
-        data = json.load(f)
+    # with open("/home/ubuntu/project/11777-nxt/new_dataset/difficult_direct_answer_70.json", "r") as f:
+    #     data = json.load(f)
 
-    m = []
-    for k in data['error_logs'].keys():
-        m.append(val_aokvqa[int(k)])
+    # m = []
+    # for k in data['error_logs'].keys():
+    #     m.append(val_aokvqa[int(k)])
 
-    val_aokvqa = m
+    # val_aokvqa = m
 
     # %%
     pg0123 = PromptGenerator0123(prompt_template = prompt_template)
@@ -78,7 +79,7 @@ if __name__ == "__main__":
 
 
                 output = model.predict_one(img_path,local_prompt_template,
-                                        extra_config = {"max_new_tokens":200, "temperature":0.5, "min_p" : 0.2})
+                                        extra_config = {"max_new_tokens":200, "temperature":1})
                 
                 text_ans = model.processor.decode(output[0])
 
@@ -101,12 +102,15 @@ if __name__ == "__main__":
                 cnt += 1
             else:
                 error_logs["error_logs"][i] = error_log
+            
+            if i % 5 == 0 and i!=0:
+                print(f"Accuracy: {cnt / i}")
         
           
             torch.cuda.empty_cache()
         error_logs['final_accuracy'] = cnt / len(val_aokvqa)
 
-        with open("/home/ubuntu/project/11777-nxt/logs/dict_logs/llama_direct_ans_full_re_ans_161.json", "w") as f:
+        with open("logs/diff_70/direct_ans_diff_70_t1.json", "w") as f:
             json.dump(error_logs, f)
     
 

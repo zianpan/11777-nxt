@@ -34,7 +34,7 @@ if to_load:
 
 split = "val"
 # print(f"Loading {split} dataset")
-eval_num = 300
+eval_num = 3
 
 # eval_num = min(eval_num, 300)
 # %%
@@ -137,7 +137,7 @@ with torch.no_grad():
 
         text_ans = None
 
-        for i in range(2):
+        for _ in range(2):
             local_prompt_template += "Now please output the rationale.\n Rationale:"
             output = model.predict_one(img_path,local_prompt_template,
                                     extra_config = {"max_new_tokens":200})
@@ -166,20 +166,22 @@ with torch.no_grad():
         extracted_content = extract_response(text_ans)
 
         isCorrect, error_log = compare_ans(meta_data_one_sample, text_ans, last_num_string = 30)
+        error_logs["error_logs"][i] = error_log
         if not isCorrect:
             error_logs["error_logs"][i] = error_log
         else:
             cnt += 1
+
         if ind % 5 == 0:
             print('current accuracy: ', cnt/ind)
         
         
         del output, text_ans, extracted_content,meta_data_one_sample
         
-    error_logs['final_accuracy'] = cnt / ind
+    error_logs['final_accuracy'] = cnt / eval_num
 
 
-with open("logs/dict_logs/self-refine-diffcult-70-t1.json", "w") as f:
+with open("logs/self-refine/self-refine-diffcult-70-t1.json", "w") as f:
     json.dump(error_logs, f)
 
 
