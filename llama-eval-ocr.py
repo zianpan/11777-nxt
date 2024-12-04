@@ -37,14 +37,18 @@ prompt_template = """
 
 split = "val"
 print(f"Loading {split} dataset")
-eval_num = 100
+eval_num = 1000
+
+
 # %%
-val_aokvqa = prepare_dataset(split=split)
+# val_aokvqa = prepare_dataset(split=split)
+val_aokvqa = load_dataset_path("new_dataset/based_model_hard_256.json")
+eval_num = min(eval_num, len(val_aokvqa))
 
 # %%
 # open this json file  /home/ubuntu/data/aokvqa/ocr_res_val.json
-with open("/home/ubuntu/data/aokvqa/ocr_res_val.json") as f:
-    ocr_res = json.load(f)
+# with open("/home/ubuntu/data/aokvqa/ocr_res_val.json") as f:
+#     ocr_res = json.load(f)
 
 # %%
 pg0123 = PromptGenerator0123(prompt_template = prompt_template)
@@ -91,7 +95,7 @@ with torch.no_grad():
     cnt = 0
     overall_confidence = []
     ind = 0
-    for i in trange(4,len(val_aokvqa)):
+    for i in trange(eval_num):
         ind += 1
         torch.cuda.empty_cache()
         meta_data_one_sample = val_aokvqa[i]
@@ -103,16 +107,16 @@ with torch.no_grad():
         base_ans = meta_data_one_sample["correct_choice_idx"]
         rationale =  meta_data_one_sample['rationales']
         direct_ans = meta_data_one_sample['direct_answers']
-        ocr_res_text = ocr_res[str(img_id)]
+        # ocr_res_text = ocr_res[str(img_id)]
         question = meta_data_one_sample["question"]
         choices = meta_data_one_sample["choices"]
         mcToAsk = pg0123.generate_question(question, choices)
-        OCR_prompt = f"""Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
-       \n OCR result: {ocr_res_text}.
-    """
+    #     OCR_prompt = f"""Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
+    #    \n OCR result: {ocr_res_text}.
+    # """
         # local_prompt_template = prompt_template + mcToAsk
-        final_text = "Now Please answer the following question based on the image and the OCR result. You should first output Rational and then the answer.\n Now, please output the rational step by step.\n Rational:"
-        local_prompt_template = prompt_template + OCR_prompt+mcToAsk + final_text
+        final_text = "Now please answer the question based on the image. You should first output Rational and then the answer.\n Now, please output the rational step by step.\n Rational:"
+        local_prompt_template = prompt_template  + mcToAsk + final_text
 
         # output = model.predict_one(img_path,local_prompt_template,
         #                         extra_config = {"max_new_tokens":200, 
@@ -121,7 +125,7 @@ with torch.no_grad():
         # text_ans = model.processor.decode(output.sequences[0])
 
         output = model.predict_one(img_path,local_prompt_template,
-                                extra_config = {"max_new_tokens":200, "temperature":0.5})
+                                extra_config = {"max_new_tokens":200, "temperature":1})
         text_ans = model.processor.decode(output[0])
 
 
@@ -130,7 +134,7 @@ with torch.no_grad():
             extracted_content1 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans, re.DOTALL).group(1).strip()
 
             output = model.predict_one(img_path,local_prompt_template + extracted_content1 + "\n Now, please output the answer using 0 or 1 or 2 or 3.",
-                                    extra_config = {"max_new_tokens":200})
+                                    extra_config ={"max_new_tokens":200, "temperature":1})
             
             text_ans2 = model.processor.decode(output[0])
             extracted_content2 = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", text_ans2, re.DOTALL).group(1).strip()
@@ -171,10 +175,10 @@ with torch.no_grad():
         # del confi, probabilities, logits, token_ids,
         
 # print('final accuracy', cnt/ind)  
-error_logs["final_accu"] = cnt/ind
+error_logs["final_accu"] = cnt/eval_num
 # print('final confidence', np.mean(overall_confidence))
 
-with open("/home/ubuntu/project/11777-nxt/logs/dict_logs/llama_rationale_ocr.json", "w") as f:
+with open("/home/ubuntu/project/11777-nxt/logs/hard_263/llama_cot_hard_263_t1.json", "w") as f:
     json.dump(error_logs, f)
 
 print(cnt/ind)
