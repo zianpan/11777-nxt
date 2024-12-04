@@ -138,4 +138,8 @@ def compare_ans(sample, langauge_output, last_num_string = 20):
             res["ERROR_MSG"] = {"extracted_ans": ans_content, "language_output": langauge_output, "sample": sample, "true_ans": base_ans, "model_ans": model_ans}            
             return False, res
 
+def load_dataset_path(ds_path):
+    with open(ds_path, 'r') as f:
+        data = json.load(f)
+    return data
 

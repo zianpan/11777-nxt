@@ -32,13 +32,7 @@ path_dict = {"val":"/home/ubuntu/data/coco/val2017/",
 # %%
 
 prompt_template = """
-You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
-The rationales should also include in curly braces the answer to the question.
 
-Here are some examples that you can follow:
-{}
-
-Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
 """
 
 split = "val"

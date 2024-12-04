@@ -25,35 +25,32 @@ if to_load:
     to_load = False
 
 # %%
-path_dict = {"val":"/home/ubuntu/data/coco/val2017/",
-             "test":"/home/ubuntu/data/coco/test2017/",
-             "train":"/home/ubuntu/data/coco/train2017/"}
+# path_dict = {"val":"/home/ubuntu/data/coco/val2017/",
+#              "test":"/home/ubuntu/data/coco/test2017/",
+#              "train":"/home/ubuntu/data/coco/train2017/"}
 
 # %%
 
-prompt_template = """
-You task is to select one of the four following options based on the image and the question. Specifically, you need to output {{A }} or {{B}} or {{C}}or {{D}} surrounded by curly braces as well as rationales of why you chose that option.
-The rationales should also include in curly braces the answer to the question.
-
-Here are some examples that you can follow:
-{}
-
-Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
-"""
 
 split = "val"
-print(f"Loading {split} dataset")
+# print(f"Loading {split} dataset")
 eval_num = 300
+
+# eval_num = min(eval_num, 300)
 # %%
-val_aokvqa, coco_val_caption, coco_id_filename = prepare_dataset(split=split)
+# val_aokvqa = prepare_dataset(split=split)
+ds_path = "new_dataset/difficult_direct_answer_70.json"
+val_aokvqa = load_dataset_path(ds_path)
+
+eval_num = min(eval_num, len(val_aokvqa))
 
 # %%
 # open this json file  /home/ubuntu/data/aokvqa/ocr_res_val.json
-with open("/home/ubuntu/data/aokvqa/ocr_res_val.json") as f:
-    ocr_res = json.load(f)
+# with open("/home/ubuntu/data/aokvqa/ocr_res_val.json") as f:
+#     ocr_res = json.load(f)
 
 # %%
-pg0123 = PromptGenerator0123(prompt_template = prompt_template)
+pg0123 = PromptGenerator0123(prompt_template = "")
 prompt_template = pg0123.generate_template(val_aokvqa[:3])
 
 # %%
@@ -75,11 +72,10 @@ Rationale: From the question, we know that someone is celebrating for the birthd
 Question: What best describes the pool of water?
 Choices: 0. frozen 1. fresh 2. dirty 3. boiling
 Rationale: Looking at the picture, we can see a tree in the middle. Behind the tree, we can see several giraffes. On the bottom of the picture, we can see a pool of water. This refers to the pool mentioned in the question. The pool is dark brown and it is brown and surrounded with mud. So the pool is dirty.
-
 """
 
 # %%
-print(prompt_template)
+# print(prompt_template)
 
 
 # %%
@@ -96,14 +92,16 @@ with torch.no_grad():
     cnt = 0
     overall_confidence = []
     ind = 0
-    for i in trange(4,4+eval_num):
+    error_logs = {"final_accuracy":"None", "error_logs":{}}
+    for i in trange(eval_num):
         ind += 1
         torch.cuda.empty_cache()
         meta_data_one_sample = val_aokvqa[i]
-        base_path = "/home/ubuntu/data/coco/val2017/"
+        split = meta_data_one_sample['split']
+        base_path = f"/home/ubuntu/data/coco/{split}2017/"
         img_id = meta_data_one_sample["image_id"]
-        img_file = coco_id_filename[img_id]
-        ocr_res_text = ocr_res[str(img_id)]
+        img_file = str(img_id).zfill(12) + ".jpg"
+        # ocr_res_text = ocr_res[str(img_id)]
         img_path = base_path + img_file  
         base_ans = meta_data_one_sample["correct_choice_idx"]
         rationale =  meta_data_one_sample['rationales']
@@ -111,12 +109,12 @@ with torch.no_grad():
         question = meta_data_one_sample["question"]
         choices = meta_data_one_sample["choices"]
         mcToAsk = pg0123.generate_question(question, choices)
-        OCR_prompt = f"""Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
-       \n OCR result: <{ocr_res_text}>\n 
-        Here is the question and choices you have."""
+    #     OCR_prompt = f"""Here is the OCR result of the image. You can refer to this information to answer the question. Remember the OCR result is not always accurate.
+    #    \n OCR result: <{ocr_res_text}>\n 
+    #     Here is the question and choices you have."""
 
         # local_prompt_template = prompt_template + mcToAsk
-        final_text = """You should output Rationals step by step based on the image and the OCR result."""
+        final_text = """You should output rationale step by step based on the image and the OCR result."""
         
 
         # output = model.predict_one(img_path,local_prompt_template,
@@ -128,13 +126,14 @@ with torch.no_grad():
             extracted_content = re.search(r"<\|eot_id\|><\|start_header_id\|>assistant<\|end_header_id\|>(.*)", full_response, re.DOTALL).group(1).strip()
             return extracted_content
         
-        output = model.predict_one(img_path,mcToAsk + "\n Can you give me the descriptions of the main subject in the question and the four choices?",
-                                    extra_config = {"max_new_tokens":200})
-        choices_def = model.processor.decode(output[0])
-        del output
-        choices_def = extract_response(choices_def)
+        # output = model.predict_one(img_path,mcToAsk + "\n Can you give me the descriptions of the main subject in the question and the four choices?",
+        #                             extra_config = {"max_new_tokens":200})
+        # choices_def = model.processor.decode(output[0])
+        # del output
+        # choices_def = extract_response(choices_def)
 
-        local_prompt_template = prompt_template + OCR_prompt + mcToAsk + "This is the description of the four choices: "+ choices_def + final_text
+        # local_prompt_template = prompt_template + OCR_prompt + mcToAsk + "This is the description of the four choices: "+ choices_def + final_text
+        local_prompt_template = prompt_template + "Here is the question and choices you have.\n" +  mcToAsk  + final_text
 
         text_ans = None
 
@@ -145,14 +144,14 @@ with torch.no_grad():
             text_ans = model.processor.decode(output[0])
             text_ans = re.sub(r'<\|.*\|>', '', text_ans)
 
-            local_prompt_template = text_ans + "\n This is the previous response. Is it possible that other choices might be the correct? Provide feedback based on it \n Feedback:"
+            local_prompt_template = text_ans + "\n This is the previous response. Is it possible that other choices might be the correct? Provide feedback based on it. \n Feedback:"
             del output, text_ans
             output = model.predict_one(img_path,local_prompt_template,
                                     extra_config = {"max_new_tokens":200})
             text_ans = model.processor.decode(output[0])
             text_ans = re.sub(r'<\|.*\|>', '', text_ans)
             
-            local_prompt_template = text_ans + "\n This is previous response. Can you give me a refined version of the rationale? \n Refined Rationale:"
+            local_prompt_template = text_ans + "\n This is previous response. Can you give me a refined version of the rationale given feedback? \n Refined Rationale:"
             del output, text_ans
             output = model.predict_one(img_path,local_prompt_template,
                                     extra_config = {"max_new_tokens":200})
@@ -165,6 +164,28 @@ with torch.no_grad():
                                     extra_config = {"max_new_tokens":200})
         text_ans = model.processor.decode(output[0])
         extracted_content = extract_response(text_ans)
+
+        isCorrect, error_log = compare_ans(meta_data_one_sample, text_ans, last_num_string = 30)
+        if not isCorrect:
+            error_logs["error_logs"][i] = error_log
+        else:
+            cnt += 1
+        if ind % 5 == 0:
+            print('current accuracy: ', cnt/ind)
+        
+        
+        del output, text_ans, extracted_content,meta_data_one_sample
+        
+    error_logs['final_accuracy'] = cnt / ind
+
+
+with open("logs/dict_logs/self-refine-diffcult-70-t1.json", "w") as f:
+    json.dump(error_logs, f)
+
+
+
+
+
             
             # self-refine
 
@@ -212,39 +233,36 @@ with torch.no_grad():
         # overall_confidence.append(confi)
         # del confi, probabilities, logits, token_ids,
 
-        model_ans = -1
-        for num in [0,1,2,3]:
-            if str(num) in extracted_content:
-                model_ans = num
-                break
+        # model_ans = -1
+        # for num in [0,1,2,3]:
+        #     if str(num) in extracted_content:
+        #         model_ans = num
+        #         break
 
-        if model_ans == -1:
-            print("<ERROR1> ANS NOT FOUND")
-            print(text_ans)
-            print(meta_data_one_sample)
-            print("<END OF ERROR>")
-            del output
-            continue
+        # if model_ans == -1:
+        #     print("<ERROR1> ANS NOT FOUND")
+        #     print(text_ans)
+        #     print(meta_data_one_sample)
+        #     print("<END OF ERROR>")
+        #     del output
+        #     continue
 
         
-        if model_ans == int(base_ans):
-            cnt += 1
-        else:
-            print("<ERROR2> INCORRECT ANS")
-            print(text_ans)
-            print(meta_data_one_sample)
-            print("TRUE ANS: ", base_ans)
-            print("MODEL ANS: ", model_ans)
-            print("<END OF ERROR>")
+        # if model_ans == int(base_ans):
+        #     cnt += 1
+        # else:
+        #     print("<ERROR2> INCORRECT ANS")
+        #     print(text_ans)
+        #     print(meta_data_one_sample)
+        #     print("TRUE ANS: ", base_ans)
+        #     print("MODEL ANS: ", model_ans)
+        #     print("<END OF ERROR>")
 
 
-        if i % 20 == 0:
-            print('current accuracy: ', cnt/ind)
+        # if i % 20 == 0:
+        #     print('current accuracy: ', cnt/ind)
         
-        
-        del output, text_ans, extracted_content,meta_data_one_sample
-        
-print('final accuracy', cnt/ind)  
+    
 # print('final confidence', np.mean(overall_confidence))
 
 # %%
