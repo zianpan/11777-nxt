@@ -121,7 +121,7 @@ def convert_to_conversation(sample, mode = "train"):
 # %%
 val_aokvqa = prepare_dataset("val")
 # val_aokvqa = load_dataset_path("new_dataset/difficult_direct_answer_70.json")
-
+val_aokvqa = load_dataset_path("new_dataset/based_model_hard_256.json")
 # %%
 messages = [convert_to_conversation(sample,mode="val") for sample in val_aokvqa]
 
@@ -210,10 +210,12 @@ def eval(messages,eval_num):
     return error_logs
 
 # %%
+# error_logs = eval(messages,len(messages))
 error_logs = eval(messages,len(messages))
 
+
 # %%
-with open("/home/ubuntu/project/11777-nxt/logs/diff_70/cllama_full_val.json", "w") as f:
+with open("/home/ubuntu/project/11777-nxt/logs/hard_263/callama_hard_263_val.json", "w") as f:
     json.dump(error_logs, f)
 
 # # %%

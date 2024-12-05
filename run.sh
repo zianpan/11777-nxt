@@ -23,3 +23,4 @@ pip install -e .
 pip install -r requirement.txt
 pip install unsloth
 pip install --upgrade --no-cache-dir --no-deps git+https://github.com/unslothai/unsloth.git
+pip install --upgrade --no-cache-dir unsloth unsloth_zoo
