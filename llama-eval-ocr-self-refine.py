@@ -34,13 +34,13 @@ if to_load:
 
 split = "val"
 # print(f"Loading {split} dataset")
-eval_num = 300
+eval_num = 2000
 
 # eval_num = min(eval_num, 300)
 # %%
-# val_aokvqa = prepare_dataset(split=split)
-ds_path = "new_dataset/based_model_hard_256.json"
-val_aokvqa = load_dataset_path(ds_path)
+val_aokvqa = prepare_dataset(split=split)
+# ds_path = "new_dataset/based_model_hard_256.json"
+# val_aokvqa = load_dataset_path(ds_path)
 
 eval_num = min(eval_num, len(val_aokvqa))
 
@@ -137,31 +137,32 @@ with torch.no_grad():
 
         text_ans = None
 
+        local_prompt_template += "Now please output the rationale.\n Rationale:"
+        output = model.predict_one(img_path,local_prompt_template,
+                                extra_config = {"max_new_tokens":200,"temperature":1.5})
+        text_ans = model.processor.decode(output[0])
+        text_ans = re.sub(r'<\|.*\|>', '', text_ans)
+
         for _ in range(2):
-            local_prompt_template += "Now please output the rationale.\n Rationale:"
-            output = model.predict_one(img_path,local_prompt_template,
-                                    extra_config = {"max_new_tokens":200})
-            text_ans = model.processor.decode(output[0])
-            text_ans = re.sub(r'<\|.*\|>', '', text_ans)
 
             local_prompt_template = text_ans + "\n This is the previous response. Is it possible that other choices might be the correct? Provide feedback based on it. \n Feedback:"
             del output, text_ans
             output = model.predict_one(img_path,local_prompt_template,
-                                    extra_config = {"max_new_tokens":200, "temperature":0.5})
+                                    extra_config = {"max_new_tokens":200, "temperature":1.5})
             text_ans = model.processor.decode(output[0])
             text_ans = re.sub(r'<\|.*\|>', '', text_ans)
             
             local_prompt_template = text_ans + "\n This is previous response. Can you give me a refined version of the rationale given feedback? \n Refined Rationale:"
             del output, text_ans
             output = model.predict_one(img_path,local_prompt_template,
-                                    extra_config = {"max_new_tokens":200, "temperature":0.5})
+                                    extra_config = {"max_new_tokens":200, "temperature":1.5})
             text_ans = model.processor.decode(output[0])
             text_ans = re.sub(r'<\|.*\|>', '', text_ans)
         
         final_prompt = text_ans + f"\n Now, this is the question again \n {mcToAsk}\n Please output the answer using 0 or 1 or 2 or 3."
 
         output = model.predict_one(img_path,final_prompt,
-                                    extra_config = {"max_new_tokens":200, "temperature":0.5})
+                                    extra_config = {"max_new_tokens":200, "temperature":1.5})
         text_ans = model.processor.decode(output[0])
         extracted_content = extract_response(text_ans)
 
@@ -181,7 +182,7 @@ with torch.no_grad():
     error_logs['final_accuracy'] = cnt / eval_num
 
 
-with open("logs/hard-263/self-refine-diffcult-263-t1.json", "w") as f:
+with open("logs/full_val/self-refine_full_val_t1.5.json", "w") as f:
     json.dump(error_logs, f)
 
 
