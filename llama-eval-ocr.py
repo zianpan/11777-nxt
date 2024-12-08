@@ -37,12 +37,12 @@ prompt_template = """
 
 split = "val"
 print(f"Loading {split} dataset")
-eval_num = 1000
+eval_num = 2000
 
 
 # %%
-# val_aokvqa = prepare_dataset(split=split)
-val_aokvqa = load_dataset_path("new_dataset/based_model_hard_256.json")
+val_aokvqa = prepare_dataset(split=split)
+# val_aokvqa = load_dataset_path("new_dataset/based_model_hard_256.json")
 eval_num = min(eval_num, len(val_aokvqa))
 
 # %%
@@ -178,7 +178,7 @@ with torch.no_grad():
 error_logs["final_accu"] = cnt/eval_num
 # print('final confidence', np.mean(overall_confidence))
 
-with open("/home/ubuntu/project/11777-nxt/logs/hard_263/llama_cot_hard_263_t1.json", "w") as f:
+with open("/home/ubuntu/project/11777-nxt/logs/full_val/llama_cot_full_val_t1.json", "w") as f:
     json.dump(error_logs, f)
 
 print(cnt/ind)
