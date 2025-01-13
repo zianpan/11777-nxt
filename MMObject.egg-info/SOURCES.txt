@@ -1,0 +1,6 @@
+README.md
+setup.py
+MMObject.egg-info/PKG-INFO
+MMObject.egg-info/SOURCES.txt
+MMObject.egg-info/dependency_links.txt
+MMObject.egg-info/top_level.txt

@@ -1,0 +1,185 @@
+
+You task is to select one of the four following options based on the image and the question. Specifically, you need to output {A } or {B} or {C}or {D} surrounded by curly braces as well as rationales of why you chose that option.
+The rationales should also include in curly braces the answer to the question.
+
+Here are some examples that you can follow:
+Question: What is in the motorcyclist's mouth?
+Choices: 0. toothpick 1. food 2. popsicle stick 3. cigarette
+Rationale: {He's smoking while riding.The motorcyclist has a lit cigarette in his mouth while he rides on the street.The man is smoking.}
+Answer: {3}
+Question: Which number birthday is probably being celebrated?
+Choices: 0. one 1. ten 2. nine 3. thirty
+Rationale: {There is a birthday cake on the table with the number 30 written in icing.The cake says 30.The numerals three and zero are written on the cake, which indicates the person is 30 years of age as of the birthdate.}
+Answer: {3}
+Question: What best describes the pool of water?
+Choices: 0. frozen 1. fresh 2. dirty 3. boiling
+Rationale: {The pool is dark brown.It it brown and surrounded with mud.The pool is dirty.}
+Answer: {2}
+
+Now, it's your turn. Again, remember to put your answer in curly braces. Here is the question you need to answer.
+
+<ERROR2> INCORRECT ANS
+{The animal to the left has horns on its head, and the animal to the right has a similar object on its head. The object on the animal's head is similar to a witch's hat.}
+
+Answer: {3}
+{'split': 'val', 'image_id': 198960, 'question_id': '2GhdXLaZFBYHSip4rvYKfK', 'question': "The thing on the animal to the left's head is similar to what is on the head of what else?", 'choices': ['devil', 'zombie', 'vampire', 'witch'], 'correct_choice_idx': 0, 'direct_answers': ['different ear', 'he goat', 'elephant', 'bull', 'devil', 'rams', 'ram', 'buck', 'horns', 'sheep'], 'difficult_direct_answer': True, 'rationales': ['Animals with horns are in a pen.', 'The horns are used as the interpretation of the evils appearance.', 'There are horns on the sheep.']}
+TRUE ANS:  0
+MODEL ANS:  3
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The surface is a computer desk with a laptop and monitor, but it is not crowded or barren. The monitor is turned off, and there are no other objects on the desk besides the laptop and phone. The surface is minimalist, with a simple design and minimal clutter.}
+
+Answer: {2}
+{'split': 'val', 'image_id': 4795, 'question_id': '2N5sYXgyFqbDnuUhJFAWr5', 'question': 'What is the descriptive word for this surface?', 'choices': ['barren', 'crowded', 'minimalist', 'empty'], 'correct_choice_idx': 1, 'direct_answers': ['desk', 'desktop', 'glossy', 'computer', 'busy', 'crowded', 'table', 'smooth', 'desk', 'cluttered'], 'difficult_direct_answer': True, 'rationales': ['There are many visible objects in a small space without much unused space visible which is consistent with the definition of answer a.', 'There are many object including a cat on the desk space.', 'The area is really crowded and needs some room.']}
+TRUE ANS:  1
+MODEL ANS:  2
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The man on the right is wearing blue jeans. The jeans are made of denim.}
+{'split': 'val', 'image_id': 163640, 'question_id': '2PGwvdFESLvwfFCwK5pbYu', 'question': 'What type of pants is the man on the right wearing?', 'choices': ['linen', 'corduroy', 'silk', 'denim'], 'correct_choice_idx': 3, 'direct_answers': ['jeans', 'blue jeans', 'jeans', 'denim', 'jeans', 'jeans', 'jeans', 'jeans', 'jeans', 'blue jeans'], 'difficult_direct_answer': False, 'rationales': ['The man is wearing blue pants that have the style and look to be of the consistency of jeans and denim.', 'The colour and design is consistent of that of denim jeans.', 'The man is wearing denim because he is wearing jeans which are made out of denim']}
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The item on the desk that could help with a cold is Ricola, which is a type of herbal tea.}
+{'split': 'val', 'image_id': 147415, 'question_id': '2etjUMchktfSY5fgGg5msL', 'question': 'What item on the desk could help with a cold?', 'choices': ['cough drops', 'syringe', 'pills', 'herbal tea'], 'correct_choice_idx': 0, 'direct_answers': ['cough drops', 'tissue', 'ricola', 'cough drops', 'tissue box', 'ricola', 'cough drops', 'tissue', 'tissue', 'tissues'], 'difficult_direct_answer': False, 'rationales': ['Cough drops soothe the throat.', 'There are ricola branded candies which help with sore throats.', 'A cold sufferer often has to deal with a nagging cough, so the obvious object which could help with that symptom is the bag with the ricola name on it, since ricola is a brand of cough drops.']}
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The flag on the wall is the American flag. The blue and white stars are visible on the flag.}
+{'split': 'val', 'image_id': 434459, 'question_id': '2oPzCyj5FjrKtBLjGZH2rF', 'question': 'What flag is represented on the wall?', 'choices': ['english', 'moravian', 'american', 'french'], 'correct_choice_idx': 2, 'direct_answers': ["don't know", 'american', 'american', 'usa', 'cuba', 'united states', 'united states', 'american', 'usa', 'usa'], 'difficult_direct_answer': False, 'rationales': ['The blue with the stars on it is the usa flag.', 'The white stars on the dark blue background are showing.', 'It has the blue color and white stars you see on an american flag.']}
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The cake is covered in a thick layer of white fondant, which is a type of sugar paste commonly used for decorating cakes. The fondant is smooth and even, with no visible texture or crumbs, indicating that it is freshly applied. Additionally, the fondant is colored white, which is a common color for fondant used on cakes.}
+
+Answer: {0}
+{'split': 'val', 'image_id': 180878, 'question_id': '2xDeTCXSRqdhvREBDhHsMx', 'question': 'What is the outside of the cake made of?', 'choices': ['frosting', 'custard', 'fondant', 'whipped cream'], 'correct_choice_idx': 2, 'direct_answers': ['frosting', 'icing', 'food paste', 'fondant', 'fondant', 'icing', 'fondant', 'icing', 'next word', 'fondant'], 'difficult_direct_answer': False, 'rationales': ['The cake has fondant on it.', 'Fondant is a harder and malleable type if cake frosting that can be easily shaped to make these designs.', 'Many cakes use this product to decorate the outside of a cake.']}
+TRUE ANS:  2
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The visible bottles are on the ledge behind the toilet. The bottles are clear, and they appear to be filled with a liquid. The bottles are positioned next to the shower curtain, which suggests that they may be used for bathing or showering. Given their location and appearance, it is likely that the bottles contain body wash or shampoo and conditioner.}
+
+Answer: {0}
+{'split': 'val', 'image_id': 547816, 'question_id': '3qnvp3XRGpc5L6RMhRZ3gg', 'question': 'The visible bottles most likely contain what kind of items?', 'choices': ['body wash', 'shampoo conditioner', 'lotions', 'mouthwash'], 'correct_choice_idx': 1, 'direct_answers': ['shampoo', 'soap', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner', 'shampoo', 'shampoo conditioner'], 'difficult_direct_answer': False, 'rationales': ['They are located within the shower.', 'They are in the shower.', 'They are bottles of stuff to wash your hair with and condition it.']}
+TRUE ANS:  1
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The man is playing wii boxing. The man is holding a wii controller in each hand and is standing in front of a television with a boxing game on the screen. The man is playing wii boxing.}
+{'split': 'val', 'image_id': 195842, 'question_id': '3vbWi2p7C9SSUHWSdbMYbE', 'question': 'What sport game is the man playing?', 'choices': ['wii boxing', 'wii baseball', 'wii football', 'wii tennis'], 'correct_choice_idx': 0, 'direct_answers': ['boxing', 'boxing', 'boxing', 'boxing', 'boxing', 'wii sports', 'boxing', 'wii', 'wii boxing', 'boxing'], 'difficult_direct_answer': False, 'rationales': ['There is a white device in her hand and she is looking at the tv which has boxing on the screen.', 'The game is wii boxing.', 'The game is in a boxing ring and looks like the wii boxing version.']}
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+The image depicts a kitchen with various cooking utensils and appliances, including a stove, sink, and cabinets. The presence of a clock on the wall and the organized layout of the kitchen suggest that it is a domestic kitchen, rather than a commercial or auto shop.
+
+{1. commercial kitchen}
+{'split': 'val', 'image_id': 156278, 'question_id': '3zxLUD8FPcCLJWYsG7h2KY', 'question': 'What kind of venue is it?', 'choices': ['garage', 'commercial kitchen', 'auto shop', 'domestic kitchen'], 'correct_choice_idx': 3, 'direct_answers': ['home', 'domestic kitchen', 'kitchen', 'kitchen', 'kitchen', 'home', 'hostel', 'kitchen', 'kitchen', 'home kitchen'], 'difficult_direct_answer': False, 'rationales': ['There is a sink and a stove and a dining table in a homely environment.', 'This is in a kitchen at a home.', 'The kitchen is at a house.']}
+TRUE ANS:  3
+MODEL ANS:  1
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The image shows a kitchen with a rug in front of a stainless-steel appliance, which is likely a dishwasher. The rug is placed in front of the appliance, indicating that it is likely to be a washing machine.}
+
+Answer: {2}
+{'split': 'val', 'image_id': 127182, 'question_id': '4C2cZitDfGX5ytw6YTcxiL', 'question': 'What is likely in front of the rug?', 'choices': ['refrigerator', 'pantry', 'washing machine', 'sink'], 'correct_choice_idx': 3, 'direct_answers': ['cupboard', 'sink', 'cupboard', 'sink', 'sink', 'sink', 'sink', 'cabinets', 'sink', 'sink'], 'difficult_direct_answer': False, 'rationales': ['The rug is in front of the sink.', 'Rugs are put in front of sinks.', 'Looking at the design of the kitchen that is where a sink is probably located and that is the place most people would put a rug.']}
+TRUE ANS:  3
+MODEL ANS:  2
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The letters "N4339" are written on the side of the yellow plane. The letters are in black and appear to be a serial number or identification code for the aircraft.}
+
+Answer: {0}
+{'split': 'val', 'image_id': 502599, 'question_id': '4U4iSWxvXv9RtE6V9KpxJo', 'question': 'What is on the side of the yellow plane?', 'choices': ['phone number', 'call letters', 'company name', 'decoration'], 'correct_choice_idx': 1, 'direct_answers': ['call letters', 'number', 'number', 'numbers', 'call numbers', 'big windows', 'orange planes', 'call sign', 'wing', 'identification number'], 'difficult_direct_answer': True, 'rationales': ['Aircraft displays their call letters in clearly readable letters and numbers. the letters and numbers are in a large font so they can be identified from a distance.', 'The letters and numbers are clearly visible and these letter and number combinations on planes serve the purpose of answer a.', 'The plane has an id on the side.']}
+TRUE ANS:  1
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The men are wearing orange vests to increase their visibility, particularly in low-light conditions or when working near roads. The vests are likely made of a reflective material that helps them stand out, making it easier for others to see them. This is a common safety practice in various industries, including construction, roadwork, and emergency services.} {Visibility}
+{'split': 'val', 'image_id': 511999, 'question_id': '4UrYfZMUToiF5f7GK6eMaz', 'question': "Why are the men's vests orange?", 'choices': ['fashion', 'camouflage', 'visibility', 'dress code'], 'correct_choice_idx': 2, 'direct_answers': ['safety', 'safety', 'safety reflection', 'safety', 'visibility', 'safety', 'workers', 'visibility', 'visibility', 'safety reflection'], 'difficult_direct_answer': False, 'rationales': ['The vests provide visibility.', 'The vests are for visibility;', 'These vests are for safety so the men can be seen.']}
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The people in the image are all wearing casual clothing, and there are pizza boxes on the tables. This suggests that they are at a social event, possibly a party or gathering.}
+
+Answer: {3}
+{'split': 'val', 'image_id': 208363, 'question_id': '4j6bW4ChHncMKUnmnGAQQ2', 'question': 'They are likely having pizza at what kind of event?', 'choices': ['family', 'gaming', 'academic', 'social'], 'correct_choice_idx': 2, 'direct_answers': ['meeting', 'meeting', 'school event', 'meeting', 'party', 'working event', 'party', 'social', 'academic', 'party'], 'difficult_direct_answer': False, 'rationales': ['The chairs and the relative ages of the people in the image is consistent with answer a.', 'The people are mostly about the same age.  they are sitting in desks.', 'The men look like students.']}
+TRUE ANS:  2
+MODEL ANS:  3
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The boats are shaped like animals, specifically swans. They have a long neck and a flat body, which is typical of a swan. The boats are also colorful, with different hues of blue, red, yellow, and white. This suggests that the boats are designed to resemble swans, possibly for decorative or thematic purposes.}
+
+Answer: {1}
+{'split': 'val', 'image_id': 82821, 'question_id': '5AhBQW2ucGSwJbPTtXHTFd', 'question': 'What are the boats shaped like?', 'choices': ['trains', 'tanks', 'cars', 'planes'], 'correct_choice_idx': 2, 'direct_answers': ['cars', 'cars', 'cars', 'cars', 'cars', 'cars', 'cars', 'cars', 'cars', 'cars'], 'difficult_direct_answer': False, 'rationales': ['One is painted like a volkswagen beetle.', 'The boats appear to have round tires and headlights.', 'The boats in the water have seats and tires and a windshield just like little cars would.']}
+TRUE ANS:  2
+MODEL ANS:  1
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The pepperoni is a meat product, and the mushrooms and red peppers are vegetables. The banana peppers are a type of pepper, but they are not typically considered a risk for someone with a certain allergy. The correct answer is the pepperoni, as it is a common allergen.}
+
+Answer: {0}
+{'split': 'val', 'image_id': 27696, 'question_id': '5QURaRC8e3HjPpYC2GrX4u', 'question': 'Which vegetable on the pizza would be risky for someone with a certain allergy?', 'choices': ['pepperoni', 'mushrooms', 'banana peppers', 'red peppers'], 'correct_choice_idx': 1, 'direct_answers': ['mushrooms', 'cheese', 'mushroom', 'mushrooms', 'pepper', 'mushrooms', 'tomato', 'spice', 'mushroom', 'peppers'], 'difficult_direct_answer': False, 'rationales': ['Mushrooms are less harmful to get an allergy.', 'These have the most common allergies for people', 'The topping of the pizza comprises of slices of mushrooms.']}
+TRUE ANS:  1
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The vehicle closest to the security guard is a silver car. The silver car is parked on the street, and the security guard is sitting on a brick wall next to it. The car is the closest object to the guard.}
+
+Answer: {0}
+{'split': 'val', 'image_id': 383289, 'question_id': '5S32A279iAfRetbkeWJd77', 'question': 'What vehicle is closest to the security guard?', 'choices': ['silver car', 'two-wheeler', 'bluecar', 'dark car'], 'correct_choice_idx': 1, 'direct_answers': ['scooter', 'silver', 'silver car', 'segway', 'two-wheeler', 'segway', 'scooter', 'gray car', 'scooter', 'segway'], 'difficult_direct_answer': False, 'rationales': ['The segway, not any of the cars, is the closest to the security guard.', 'The vehicle with two wheels is being used by the security guard.', 'The security guard is resting his feet on a segway so it is the closest vehicle to him.']}
+TRUE ANS:  1
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The skateboard is balanced on a black metal post. The skateboarder is performing a trick, balancing on the post.}
+
+Answer: {0}
+{'split': 'val', 'image_id': 419408, 'question_id': '5TbBvzzr5N35YUs7yBd7Ah', 'question': 'What is the skateboard balanced on?', 'choices': ['post', 'air', 'chain', 'ground'], 'correct_choice_idx': 2, 'direct_answers': ['chain', 'rope', 'posts', 'rope', 'fence', 'chain', 'post', 'ropes', 'chain link', 'rope'], 'difficult_direct_answer': False, 'rationales': ['He is jumping up on a chain.', "There's too much give for it to be a more sturdy item, and these interlocking links to form a longer item.", 'He has it on the links of the metal rope between the poles.']}
+TRUE ANS:  2
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The gray street is made up of stone. The street is made of stone bricks.}
+{'split': 'val', 'image_id': 574702, 'question_id': '5Y5u3gnReRQbzkRnGw5ywd', 'question': 'What is the gray street made up of?', 'choices': ['asphalt', 'sand', 'stone', 'wood'], 'correct_choice_idx': 2, 'direct_answers': ['bricks', 'cobble stone', 'hexagons', 'brick', 'hexagons', 'stones', 'stone', 'cobblestone', 'bikes', 'stone'], 'difficult_direct_answer': False, 'rationales': ['The street has pavers making it up.', 'The ground is made of stone.', 'The street is stone.']}
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The name of the street is Green, which is the last name of the actress Eva Green. The street sign in the image reads "Green," and it is likely named after the actress Eva Green.}
+
+Answer: {2}
+{'split': 'val', 'image_id': 86220, 'question_id': '5aRkxnYoakzDQFyDGb9qJ2', 'question': 'The name of the street is the same as the last name of what actress?', 'choices': ['eva mendes', 'jessica biel', 'eva green', 'jessica alba'], 'correct_choice_idx': 1, 'direct_answers': ['green', 'jessica biel', 'eva green', 'green', 'eva green', 'eva', 'eva green', 'eva green', 'signal', 'michelle green'], 'difficult_direct_answer': False, 'rationales': ["Jessica biel's name matches.", 'The name is biel.', 'The street sign says green on it.']}
+TRUE ANS:  1
+MODEL ANS:  2
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The woman in the image has blonde hair, which is the same color as Phoebe Tonkin's hair. The woman in the image is playing tennis, and Phoebe Tonkin is an Australian actress and model who is known for her blonde hair.}
+
+Answer: {0}
+{'split': 'val', 'image_id': 386352, 'question_id': '5fDUuYWCZMudfXVEPywFYc', 'question': 'Who has the same color hair as this woman?', 'choices': ['phoebe tonkin', 'maria sharapova', 'serena williams', 'nina dobrev'], 'correct_choice_idx': 1, 'direct_answers': ['maria sharapova', 'paris hilton', 'sitting guy', 'skin', 'swedish persons', 'spectectors', 'no one', 'no one', 'blake lively', 'heidi klum'], 'difficult_direct_answer': True, 'rationales': ['A famous female tennis player with blond hair.', 'Maria sharapova has the same color hair', 'They both are blondes']}
+TRUE ANS:  1
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The mushrooms are the most flavorful ingredient. The mushrooms are cooked and seasoned, which brings out their natural flavors. The fish is also cooked, but it may not be as flavorful as the mushrooms. The plate is not an ingredient, and the broccoli is a vegetable that can be flavorful, but it is not as flavorful as the mushrooms.}
+
+Answer: {0}
+{'split': 'val', 'image_id': 34205, 'question_id': '5wfUGvXtyEw22kABjGaHxT', 'question': 'Which ingredient is the most flavorful?', 'choices': ['mushrooms', 'fish', 'plate', 'broccoli'], 'correct_choice_idx': 1, 'direct_answers': ['lemon juice', 'chicken', 'mushrooms', 'broccoli', 'mushrooms', 'pepper', 'parsley', 'mushroom', 'pepper', 'fish'], 'difficult_direct_answer': False, 'rationales': ['The plate is not an ingredient. the broccoli and mushrooms are bland compared to the protein.', 'It is the seasoned part of the dish.', 'Vegetables are blander than fish which has a strong taste. there are a lot of spices on top which will increase the flavor.']}
+TRUE ANS:  1
+MODEL ANS:  0
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The sky is dark and cloudy, indicating rain. The people on the ferry will face the problem of raining.}
+{'split': 'val', 'image_id': 511321, 'question_id': '6Qf2MxVMdHGnxrEZ3xGn7Q', 'question': 'What problem will the people on the ferry face?', 'choices': ['earthquake', 'raining', 'sunburn', 'tsunami'], 'correct_choice_idx': 1, 'direct_answers': ['bridge', 'seasickness', 'rain', 'storm', 'collision', 'bridge', 'storm', 'hit bridge', 'raining', 'bad weather'], 'difficult_direct_answer': False, 'rationales': ['The problem is rain.', 'The storm clouds are rolling in.', 'The overcast sky of this scene tells us precipitation is likely on the way.']}
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{They are eating hay from the ground. The cattle have their heads down to the ground because they are eating hay. The cattle are eating hay from the ground.}
+{'split': 'val', 'image_id': 137576, 'question_id': '6QuPF6pNBjs3DEXQh4AQt4', 'question': 'Why do the cattle have their heads down to the ground?', 'choices': ['to eat', 'to drink', 'to play', 'to sleep'], 'correct_choice_idx': 0, 'direct_answers': ['eating', 'to eat', 'grazing', 'feeding', 'eating hay', 'eating', 'eating hay', 'eating hay', 'eating', 'food'], 'difficult_direct_answer': False, 'rationales': ['The cows are awake. there is food, not water, on the ground.', 'There are cows visibly extending their mouths and even tongues towards the hay in front of them. hay is something cows frequently eat and it appears to be intentionally placed by the tractor likely for this prupose.', "Animals don't have thumbs for the most part and must put there face in it to eat."]}
+<END OF ERROR>
+<ERROR1> ANS NOT FOUND
+{The licence plate is orange and has the letters "NJ" on it, which stands for New Jersey. The licence plate is orange and has the letters "NJ" on it, which stands for New Jersey.}
+{'split': 'val', 'image_id': 293245, 'question_id': '6SYTPwk8BEHMp486oLsFgw', 'question': 'What state was the licence plate issues?', 'choices': ['connecticut', 'rhode island', 'new jersey', 'new york'], 'correct_choice_idx': 3, 'direct_answers': ['new york', 'new york', 'new york', 'new york', 'new york', 'new york', 'new york', 'new york', 'new york', 'new york'], 'difficult_direct_answer': False, 'rationales': ['The name of the state is written on the top of the license plate.', 'You can tell by the name on the plate as to where it is from.', 'The license plate has the words "new york" written on it.']}
+<END OF ERROR>
+<ERROR2> INCORRECT ANS
+{The man is riding a horse. The horse is wearing a saddle and bridle, and the man is holding the reins. The man is also wearing a jacket with the letters "RUS" on it. The background of the image is blurry, but it appears to be a large building or arena.}
+
+Answer: {1}
+{'split': 'val', 'image_id': 23126, 'question_id': '6pLYuYn5suAGgoBgJ4Z6HC', 'question': 'What is the activity being performed?', 'choices': ['show performance', 'training horse', 'riding horse', 'feeding horse'], 'correct_choice_idx': 0, 'direct_answers': ['riding horse', 'roman riding', 'balance', 'riding', 'horseback riding', 'horse riding', 'show performance', 'riding horses', 'horseback riding', 'riding'], 'difficult_direct_answer': False, 'rationales': ['He is doing tricks for a competition', 'They are performing for crowd.', 'The activity is a show.']}
+TRUE ANS:  0
+MODEL ANS:  1
+<END OF ERROR>
+final accuracy 0.75
